@@ -7,7 +7,6 @@ var userService = require('../services/user-service');
 var app = express();
 
 router.get('/', function(req, res){
-  console.log('user', req.user);
   if (req.user) {
     userName = req.user.firstName + ' ' + req.user.lastName;
     return res.render('index', {
