@@ -1,7 +1,7 @@
 var config = {};
 
 //DB Details
-config.mongoUri = process.env.MONGOLAB_URI || 'mongodb://localhost:27017/ang';
+config.mongoUri = process.env.MONGOLAB_URI || 'mongodb://localhost:27017/micro-cms';
 
 //Site details
 config.sitename = 'Reme Le Hane';
