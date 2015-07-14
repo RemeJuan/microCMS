@@ -8,10 +8,11 @@ var app = express();
 
 router.get('/', function(req, res){
   //res.user = true;
-  console.log(req.user);
+  userName = req.user.firstName + ' ' + req.user.lastName;
   if (req.user) {
     return res.render('index', {
-      title: config.siteName
+      title: config.siteName,
+      username: userName
     }); 
   };
 
@@ -64,7 +65,7 @@ router.post('/login', function(req, res, next) {
 router.get('/logout', function(req, res, next) {
   req.logout();
   req.session.destroy();
-  res.redirect('/');
+  res.redirect('/admin');
 });
 
 module.exports = router;
