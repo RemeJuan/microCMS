@@ -41,13 +41,60 @@ solutions, each site can be tailored specifically to a projeject while still
 allowing the client to be able to safely edit the sites content without running
 the risk of them breaking the site in the process.</p>
 
-<p><a href="https://gitter.im/RemeJuan/microCMS?utm_source=badge&amp;utm_medium=badge&amp;utm_campaign=pr-badge&amp;utm_content=badge"><img src="https://badges.gitter.im/Join%20Chat.svg" alt="Join the chat at https://gitter.im/RemeJuan/microCMS"></a></p>
+<p>Back-end is built with node and express using the Swig tempalting engine.
+The UI is built using Bootstrap and will be allowing users to easily add/change
+content and upload basic files to de displayed on teh site.</p>
+
+<p>Front-end is built using Angular.JS but is not directly connected to the backend.
+This is compltely intentional to allow the developers to create the public 
+facing site in whichever language they are most familiar with if they do not wish
+to use Angular, all you need to be able to do is fire off API calls to the
+defined end-point and strucutre the data as you choose.</p>
+
+<p>The premise behind this is that only the content and other key sections of the
+are editable by the end-user/client to keep the structure and other essential
+elements safe from accidental harm or PBKAC's. :D</p>
+
+<p><a href="https://gitter.im/RemeJuan/microCMS?utm_source=badge&amp;utm_medium=badge&amp;utm_campaign=pr-badge&amp;utm_content=badge"><img src="https://badges.gitter.im/Join%20Chat.svg" alt="Join the chat at https://gitter.im/RemeJuan/microCMS"></a>
+<img src="https://img.shields.io/badge/Status-Alpha-blue.svg" alt="Alpha">
+<img src="https://img.shields.io/github/license/mashape/apistatus.svg" alt="License - MIT"></p>
+
+<h2>
+<a id="features" class="anchor" href="#features" aria-hidden="true"><span class="octicon octicon-link"></span></a>Features</h2>
+
+<p>Current feature list is quite small, but this is a very active work in progress
+and will increase rapidly from here on out.</p>
+
+<p>** User Authentication</p>
 
 <h2>
 <a id="dependancies" class="anchor" href="#dependancies" aria-hidden="true"><span class="octicon octicon-link"></span></a>Dependancies</h2>
 
+<ul>
+<li>Node.JS v12.2</li>
+<li>bower</li>
+<li>MongoDB 3.3</li>
+</ul>
+
 <h2>
 <a id="setup-details" class="anchor" href="#setup-details" aria-hidden="true"><span class="octicon octicon-link"></span></a>Setup details</h2>
+
+<p>Clone Repo</p>
+
+<p>run:
+<code>npm install</code>
+<code>bower install</code></p>
+
+<p>Setup you mongo DB:</p>
+
+<ul>
+<li>Add a new DB called micro-cms</li>
+<li>Start you mongo DB</li>
+</ul>
+
+<p>To launch:
+Open Command-Line/Terminal and cd to your local repo and run <code>node web.js</code>
+App will not launch unless you have started your mongo server</p>
 
 <h2>
 <a id="current-resource" class="anchor" href="#current-resource" aria-hidden="true"><span class="octicon octicon-link"></span></a>Current Resource</h2>
@@ -61,6 +108,21 @@ the risk of them breaking the site in the process.</p>
 <li>Login screen design</li>
 <li>Authentication</li>
 <li>Dashboard setup</li>
+</ul>
+
+<h2>
+<a id="change-log" class="anchor" href="#change-log" aria-hidden="true"><span class="octicon octicon-link"></span></a>Change Log</h2>
+
+<h3>
+<a id="v011" class="anchor" href="#v011" aria-hidden="true"><span class="octicon octicon-link"></span></a>v0.1.1</h3>
+
+<p>Logout</p>
+
+<h3>
+<a id="v010" class="anchor" href="#v010" aria-hidden="true"><span class="octicon octicon-link"></span></a>v0.1.0</h3>
+
+<ul>
+<li>Initial commit</li>
 </ul>
 
 <p>Possible Resource:</p>
