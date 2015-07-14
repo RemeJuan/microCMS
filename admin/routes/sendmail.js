@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 var mandrill = require('node-mandrill')(process.env.MANDRILL_API);
 
-var config = require('../config');
+var config = require('../../config');
 
 var app = express();
 

@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var config = require('../config');
+var config = require('../../config');
 var passport = require('passport');
 var userService = require('../services/user-service');
 
@@ -26,28 +26,28 @@ router.get('/login', function(req, res){
   });
 });
 
-// router.get('/create', function(req, res){
-//   res.render('signup', {
-//     title: config.siteName
-//   })
-// });
+router.get('/create', function(req, res){
+  res.render('signup', {
+    title: config.siteName
+  })
+});
 
-// router.post('/create', function(req, res, next) {
-//   userService.addUser(req.body, function(err) {
-//     if (err) {
-//       var vm = {
-//         title: 'Create an account',
-//         input: req.body,
-//         error: err
-//       };
-//       delete vm.input.password;
-//       return res.render('signup', vm);
-//     }
-//     req.login(req.body, function(err) {
-//       res.redirect('/admin');
-//     });
-//   });
-// });
+router.post('/create', function(req, res, next) {
+  userService.addUser(req.body, function(err) {
+    if (err) {
+      var vm = {
+        title: 'Create an account',
+        input: req.body,
+        error: err
+      };
+      delete vm.input.password;
+      return res.render('signup', vm);
+    }
+    req.login(req.body, function(err) {
+      res.redirect('/admin');
+    });
+  });
+});
 
 router.post('/login', function(req, res, next) {
   passport.authenticate('local', function(err, user, info) {

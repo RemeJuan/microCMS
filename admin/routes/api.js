@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 // var MongoClient = require('mongodb').MongoClient;
 
-var config = require('../config');
+var config = require('../../config');
 
 var app = express();
 
