@@ -1,0 +1,70 @@
+var express = require('express');
+var router = express.Router();
+var config = require('../config');
+var passport = require('passport');
+var userService = require('../services/user-service');
+
+var app = express();
+
+router.get('/', function(req, res){
+  //res.user = true;
+  console.log(req.user);
+  if (req.user) {
+    return res.render('index', {
+      title: config.siteName
+    }); 
+  };
+
+  res.redirect('/admin/login');
+
+});
+
+router.get('/login', function(req, res){
+  res.render('login', {
+    title: config.siteName,
+    error: req.flash('error')
+  });
+});
+
+// router.get('/create', function(req, res){
+//   res.render('signup', {
+//     title: config.siteName
+//   })
+// });
+
+// router.post('/create', function(req, res, next) {
+//   userService.addUser(req.body, function(err) {
+//     if (err) {
+//       var vm = {
+//         title: 'Create an account',
+//         input: req.body,
+//         error: err
+//       };
+//       delete vm.input.password;
+//       return res.render('signup', vm);
+//     }
+//     req.login(req.body, function(err) {
+//       res.redirect('/admin');
+//     });
+//   });
+// });
+
+router.post('/login', function(req, res, next) {
+  passport.authenticate('local', function(err, user, info) {
+    if (err) { return next(err); }
+    if (!user) { return res.redirect('/admin/login'); }
+
+    req.logIn(user, function(err) {
+      if (err) { return next(err); }
+      return res.redirect('/admin');
+    });
+  })(req, res, next);
+});
+
+router.get('/logout', function(req, res, next) {
+  req.logout();
+  req.session.destroy();
+  res.redirect('/');
+});
+
+module.exports = router;
