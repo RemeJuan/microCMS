@@ -7,11 +7,46 @@ solutions, each site can be tailored specifically to a projeject while still
 allowing the client to be able to safely edit the sites content without running
 the risk of them breaking the site in the process.
 
+Back-end is built with node and express using the Swig tempalting engine.
+The UI is built using Bootstrap and will be allowing users to easily add/change
+content and upload basic files to de displayed on teh site.
+
+Front-end is built using Angular.JS but is not directly connected to the backend.
+This is compltely intentional to allow the developers to create the public 
+facing site in whichever language they are most familiar with if they do not wish
+to use Angular, all you need to be able to do is fire off API calls to the
+defined end-point and strucutre the data as you choose.
+
+The premise behind this is that only the content and other key sections of the
+are editable by the end-user/client to keep the structure and other essential
+elements safe from accidental harm or PBKAC's. :D
+
 [![Join the chat at https://gitter.im/RemeJuan/microCMS](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/RemeJuan/microCMS?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+(https://img.shields.io/badge/Status-Alpha-blue.svg)
+
+## Features
+
+Current feature list is quite small, but this is a very active work in progress
+and will increase rapidly from here on out.
+
+** User Authentication
 
 ## Dependancies
 
+* Node.JS v12.2
+* bower
+* MongoDB 3.3
+
 ## Setup details
+
+Clone Repo
+
+run:
+`npm install`
+`bower install`
+
+To launch:
+Open Command-Line/Terminal and cd to your local repo and run `node web.js`
 
 ## Current Resource
 
@@ -22,6 +57,10 @@ the risk of them breaking the site in the process.
 * Authentication
 * Dashboard setup
 
+## Change Log
+
+### v0.1
+* Initial commit
 
 Possible Resource:
 
