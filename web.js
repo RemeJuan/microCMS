@@ -15,12 +15,12 @@ var flash = require('connect-flash');
 var connectMongo = require('connect-mongo');
 
 var config = require('./config');
-var routes = require('./routes/api');
-var admin = require('./routes/admin');
-var sendmail = require('./routes/sendmail');
+var routes = require('./admin/routes/api');
+var admin = require('./admin/routes/admin');
+var sendmail = require('./admin/routes/sendmail');
 
-var passportConfig = require('./auth/admin/passport-config');
-var restrict = require('./auth/admin/restrict');
+var passportConfig = require('./admin/auth/passport-config');
+var restrict = require('./admin/auth/restrict');
 
 passportConfig();
 
