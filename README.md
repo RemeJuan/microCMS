@@ -22,7 +22,7 @@ are editable by the end-user/client to keep the structure and other essential
 elements safe from accidental harm or PBKAC's. :D
 
 [![Join the chat at https://gitter.im/RemeJuan/microCMS](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/RemeJuan/microCMS?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
-(https://img.shields.io/badge/Status-Alpha-blue.svg)
+![Alpha](https://img.shields.io/badge/Status-Alpha-blue.svg)
 
 ## Features
 
