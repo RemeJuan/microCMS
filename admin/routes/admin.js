@@ -3,6 +3,7 @@ var router = express.Router();
 var config = require('../../config');
 var passport = require('passport');
 var userService = require('../services/user-service');
+var restrict = require('../auth/restrict');
 
 var app = express();
 
