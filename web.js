@@ -19,8 +19,8 @@ var routes = require('./routes/api');
 var admin = require('./routes/admin');
 var sendmail = require('./routes/sendmail');
 
-var passportConfig = require('./auth/passport-config');
-var restrict = require('./auth/restrict');
+var passportConfig = require('./auth/admin/passport-config');
+var restrict = require('./auth/admin/restrict');
 
 passportConfig();
 
