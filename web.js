@@ -34,13 +34,6 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(useragent.express());
 
-app.use(function(req, res, next) {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-  res.header('Cache-Control', 'public, max-age=31557600');
-  next();
-});
-
 // View engine setup
 app.engine('html', cons.swig);
 app.set('view engine', 'html');
@@ -71,6 +64,13 @@ app.use('/admin', admin);
 app.use('/sendmail', sendmail);
 
 //Handled by angular front-end
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  res.header('Cache-Control', 'public, max-age=31557600');
+  next();
+});
+
 app.use(function(req, res) {
     res.sendFile(__dirname + '/dist/index.html');
 });

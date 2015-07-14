@@ -65,7 +65,10 @@ App will not launch unless you have started your mongo server
 
 ## Change Log
 
-### v0.1
+### v0.1.1
+Logout
+
+### v0.1.0
 * Initial commit
 
 Possible Resource:

@@ -7,9 +7,9 @@ var userService = require('../services/user-service');
 var app = express();
 
 router.get('/', function(req, res){
-  //res.user = true;
-  userName = req.user.firstName + ' ' + req.user.lastName;
+  console.log('user', req.user);
   if (req.user) {
+    userName = req.user.firstName + ' ' + req.user.lastName;
     return res.render('index', {
       title: config.siteName,
       username: userName
@@ -63,9 +63,9 @@ router.post('/login', function(req, res, next) {
 });
 
 router.get('/logout', function(req, res, next) {
-  req.logout();
   req.session.destroy();
-  res.redirect('/admin');
+  req.logout();
+  res.redirect('/admin/login');
 });
 
 module.exports = router;
