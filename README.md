@@ -23,6 +23,7 @@ elements safe from accidental harm or PBKAC's. :D
 
 [![Join the chat at https://gitter.im/RemeJuan/microCMS](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/RemeJuan/microCMS?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 ![Alpha](https://img.shields.io/badge/Status-Alpha-blue.svg)
+![License - MIT](https://img.shields.io/github/license/mashape/apistatus.svg)
 
 ## Features
 
@@ -36,6 +37,7 @@ and will increase rapidly from here on out.
 * Node.JS v12.2
 * bower
 * MongoDB 3.3
+* Yeoman
 
 ## Setup details
 
