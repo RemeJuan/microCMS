@@ -37,7 +37,6 @@ and will increase rapidly from here on out.
 * Node.JS v12.2
 * bower
 * MongoDB 3.3
-* Yeoman
 
 ## Setup details
 
@@ -47,8 +46,13 @@ run:
 `npm install`
 `bower install`
 
+Setup you mongo DB:
+* Add a new DB called micro-cms
+* Start you mongo DB
+
 To launch:
 Open Command-Line/Terminal and cd to your local repo and run `node web.js`
+App will not launch unless you have started your mongo server
 
 ## Current Resource
 
