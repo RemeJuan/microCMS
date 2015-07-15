@@ -76,9 +76,3 @@ Logout
 
 ### v0.1.0
 * Initial commit
-
-Possible Resource:
-
-* [Bootstrap Live Editor](http://innovastudio.com/BootstrapLiveEditor/index.html)
-* [Summernote](http://summernote.org/#/)
-* [Bootstrap WYSIWYG](https://mindmup.github.io/bootstrap-wysiwyg/)
