@@ -1,2 +1,4 @@
-$('#editor').wysiwyg();
-$('#editor').cleanHtml();
+function setupEditor() {
+	$('#editor').wysiwyg();
+	$('#editor').cleanHtml();
+}

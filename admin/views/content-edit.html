@@ -1,5 +1,5 @@
 {% include 'navigation.html' %}
-<div id="page-wrapper" class="fill">
+<div id="page-wrapper" class="content-edit">
 
     <div class="container-fluid">
 
@@ -16,58 +16,28 @@
         <!-- Content Editor -->
         <div class="row">
             <div class="col-lg-12">
-                  <div class="btn-group">
-                    <a data-original-title="Font Size" class="btn dropdown-toggle" data-toggle="dropdown" title=""><i class="icon-text-height"></i>&nbsp;<b class="caret"></b></a>
-                      <ul class="dropdown-menu">
-                      <li><a data-edit="fontSize 5"><font size="5">Huge</font></a></li>
-                      <li><a data-edit="fontSize 3"><font size="3">Normal</font></a></li>
-                      <li><a data-edit="fontSize 1"><font size="1">Small</font></a></li>
-                      </ul>
-                  </div>
-                  <div class="btn-group">
-                    <a data-original-title="Bold (Ctrl/Cmd+B)" class="btn" data-edit="bold" title=""><i class="icon-bold"></i></a>
-                    <a data-original-title="Italic (Ctrl/Cmd+I)" class="btn" data-edit="italic" title=""><i class="icon-italic"></i></a>
-                    <a data-original-title="Strikethrough" class="btn" data-edit="strikethrough" title=""><i class="icon-strikethrough"></i></a>
-                    <a data-original-title="Underline (Ctrl/Cmd+U)" class="btn" data-edit="underline" title=""><i class="icon-underline"></i></a>
-                  </div>
-                  <div class="btn-group">
-                    <a data-original-title="Bullet list" class="btn" data-edit="insertunorderedlist" title=""><i class="icon-list-ul"></i></a>
-                    <a data-original-title="Number list" class="btn" data-edit="insertorderedlist" title=""><i class="icon-list-ol"></i></a>
-                    <a data-original-title="Reduce indent (Shift+Tab)" class="btn" data-edit="outdent" title=""><i class="icon-indent-left"></i></a>
-                    <a data-original-title="Indent (Tab)" class="btn" data-edit="indent" title=""><i class="icon-indent-right"></i></a>
-                  </div>
-                  <div class="btn-group">
-                    <a data-original-title="Align Left (Ctrl/Cmd+L)" class="btn btn-info" data-edit="justifyleft" title=""><i class="icon-align-left"></i></a>
-                    <a data-original-title="Center (Ctrl/Cmd+E)" class="btn" data-edit="justifycenter" title=""><i class="icon-align-center"></i></a>
-                    <a data-original-title="Align Right (Ctrl/Cmd+R)" class="btn" data-edit="justifyright" title=""><i class="icon-align-right"></i></a>
-                    <a data-original-title="Justify (Ctrl/Cmd+J)" class="btn" data-edit="justifyfull" title=""><i class="icon-align-justify"></i></a>
-                  </div>
-                  <div class="btn-group">
-                      <a data-original-title="Hyperlink" class="btn dropdown-toggle" data-toggle="dropdown" title=""><i class="icon-link"></i></a>
-                        <div class="dropdown-menu input-append">
-                            <input class="span2" placeholder="URL" data-edit="createLink" type="text">
-                            <button class="btn" type="button">Add</button>
-                    </div>
-                    <a data-original-title="Remove Hyperlink" class="btn" data-edit="unlink" title=""><i class="icon-cut"></i></a>
-                  </div>
-                  <div class="btn-group">
-                    <a data-original-title="Insert picture (or just drag &amp; drop)" class="btn" title="" id="pictureBtn"><i class="icon-picture"></i></a>
-                    <input style="opacity: 0; position: absolute; top: 0px; left: 0px; width: 39px; height: 30px;" data-role="magic-overlay" data-target="#pictureBtn" data-edit="insertImage" type="file">
-                  </div>
-                  <div class="btn-group">
-                    <a data-original-title="Undo (Ctrl/Cmd+Z)" class="btn" data-edit="undo" title=""><i class="icon-undo"></i></a>
-                    <a data-original-title="Redo (Ctrl/Cmd+Y)" class="btn" data-edit="redo" title=""><i class="icon-repeat"></i></a>
-                  </div>
-            
-                <div id="editor">
-                    
+                <form id="contentCreate" name="contentCreate" method="post">
+                <input id="contentTitle" name="contentTitle" type="text" class="form-control input-lg form-group" value="" placeholder="Content Title" required />
+
+                <input id="contentSlug" name="contentSlug" type="text" class="form-control input-lg form-group" value="" placeholder="Content Slug" required />
+
+                    {% include 'wysiwyg.html' %}
+
+                <input id="contentMeta" name="contentMeta" type="text" class="form-control input-lg form-group " value="" placeholder="Meta Data" required />
+
+                <input id="contentKeywords" name="contentKeywords" type="text" class="form-control input-lg form-group " value="" placeholder="Keywords" required />
+
+                <div class="btn-group pull-right">
+                    <button class="btn btn-primary" type="submit">Save</button>
+                    <a class="btn btn-danger" href="/admin/content">Cancel</a>
                 </div>
+                </form>
             </div>
         </div>
         <!-- /.row -->
 
     </div>
     <!-- /.container-fluid -->
-
 </div>
 <!-- /#page-wrapper -->
+
