@@ -66,7 +66,7 @@ App will not launch unless you have started your mongo server
 ## Change Log
 
 ### v0.2.0
-Page management
+Content CRUD
 
 ### v0.1.2
 Admin Dashboard
