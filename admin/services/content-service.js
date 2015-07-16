@@ -1,6 +1,6 @@
 var Content = require('../models/content').Content;
 
-exports.addEditContent = function(content, next) {
+exports.createContent = function(content, next) {
     var newContent = new Content({
         title: content.contentTitle,
         slug: content.contentSlug,
@@ -25,9 +25,18 @@ exports.findContent = function(slug, next) {
     });
 };
 
-exports.fetchContent = function(content, next) {
+exports.getAllContent = function(content, next) {
     Content.find({
         
+    }, function(err, content) {
+        console.log(content);
+        next(err, content);
+    });
+};
+
+exports.fetchContentItem = function(slug, next) {
+    Content.find({
+        slug: slug
     }, function(err, content) {
         console.log(content);
         next(err, content);

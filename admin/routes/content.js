@@ -7,8 +7,7 @@ var restrict = require('../auth/restrict');
 var app = express();
 
 router.get('/', restrict, function(req, res){
-  contentService.fetchContent(req.body, function(err, content) {
-    console.log(content);
+  contentService.getAllContent(req.body, function(err, content) {
     return res.render('content', {
       title: 'Content',
       listView: true,
@@ -17,11 +16,14 @@ router.get('/', restrict, function(req, res){
   });
 });
 
-router.get('/edit', restrict, function(req, res){
-  return res.render('content', {
-    title: 'Edit Content',
-    editView: true
-  }); 
+router.get('/edit/:slug', restrict, function(req, res){
+  contentService.fetchContentItem(req.params.slug, function(err, content) {
+    return res.render('content', {
+      title: 'Edit Content',
+      listView: true,
+      content: content
+    }); 
+  });
 });
 
 router.get('/create', restrict, function(req, res){
@@ -32,7 +34,7 @@ router.get('/create', restrict, function(req, res){
 });
 
 router.post('/create', function(req, res, next) {
-  contentService.addEditContent(req.body, function(err) {
+  contentService.createContent(req.body, function(err) {
     if (err) {
       var vm = {
         title: 'Create Content',
