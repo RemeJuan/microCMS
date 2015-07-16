@@ -18,9 +18,8 @@ exports.addEditContent = function(content, next) {
 };
 
 exports.findContent = function(slug, next) {
-    Content.findOneAndUpdate({
-        slug: slug,
-        upsert: true
+    Content.findOne({
+        slug: slug
     }, function(err, content) {
         next(err, content);
     });
