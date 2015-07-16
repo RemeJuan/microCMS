@@ -52,3 +52,43 @@
 		margin-bottom: @baseHeight * 0.5
 	}
 }
+/*	==================================================
+	# WYSIWYG
+	================================================== */
+
+	@import "plugins/bootstrap-wysiwyg.less";
+
+	#wysiwyg-editor {
+		overflow:scroll;
+		min-height: 200px;
+		max-height:300px;
+	}
+
+
+/*	==================================================
+	# Content
+	================================================== */
+
+.content-edit {
+
+}
+
+.content-list {
+	.header {
+		font-size: 18px;
+		margin-bottom: @baseHeight * 0.5;
+		padding-bottom: @baseHeight * 0.5;
+		border-bottom: 1px solid black;
+	}
+	ul {
+		padding: 0;
+		margin: 0;
+		li {
+			list-style: none;
+			padding-top: @baseHeight * 0.25;
+			padding-bottom: @baseHeight * 0.25;
+			border-bottom: 1px solid #eee
+		}	
+	}
+
+}

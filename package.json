@@ -1,11 +1,11 @@
 {
   "name": "microCMS",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "Personal portfolio site",
   "author": "Reme Le Hane info@remelehane.me",
   "dependencies": {
     "angular-bridge": "^0.3.6",
-    "bcrypt": "^0.8.3",
+    "bcrypt-nodejs": "0.0.3",
     "body-parser": "^1.13.0",
     "connect-flash": "^0.1.1",
     "connect-mongo": "^0.8.1",

@@ -9,6 +9,8 @@
   <meta name="author" content="">
   <title>{% block title %} {{title}} {% endblock %}</title>
 
+  <base href="/admin/">
+  
   {% block head %}
   <!-- Bootstrap Core CSS -->
   <link href="styles/bootstrap.min.css" rel="stylesheet">
@@ -16,9 +18,6 @@
   <!-- Custom CSS -->
   <link href="styles/sb-admin.css" rel="stylesheet">
   <link href="styles/custom.css" rel="stylesheet">
-
-  <!-- Morris Charts CSS -->
-  <link href="styles/plugins/morris.css" rel="stylesheet">
 
   <!-- Custom Fonts -->
   <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -40,14 +39,27 @@
 {% block scripts %}
 <!-- jQuery -->
 <script src="scripts/jquery.js"></script>
-
 <!-- Bootstrap Core JavaScript -->
 <script src="scripts/bootstrap.min.js"></script>
+<!-- Custom scripting -->
+<script src="scripts/custom.js"></script>
+<!-- Bootstrap WYSIWYG editor -->
+{% if editView %}
+<script src="scripts/plugins/bootstrap-wysiwyg.js"></script>
+<script src="scripts/plugins/jquery.hotkeys.js"></script>
 
-<!-- Morris Charts JavaScript -->
-<script src="scripts/plugins/morris/raphael.min.js"></script>
-<script src="scripts/plugins/morris/morris.min.js"></script>
-<script src="scripts/plugins/morris/morris-data.js"></script>
+  <script>
+    $(document).ready(function() {
+     $('#wysiwyg-editor').wysiwyg();
+     $('#wysiwyg-editor').wysiwyg().on('change', function(){
+      $('#contentBody').val( $(this).cleanHtml() );
+     });
+
+     $('#wysiwyg-editor').html( $('#contentBody').val() )
+
+   });
+  </script>
+{% endif %}
 {% endblock %}
 
 </html>

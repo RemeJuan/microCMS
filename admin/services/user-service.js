@@ -1,8 +1,8 @@
-var bcrypt = require('bcrypt');
+var bcrypt = require('bcrypt-nodejs');
 var User = require('../models/user').User;
 
 exports.addUser = function(user, next) {
-    bcrypt.hash(user.password, 10, function(err, hash) {
+    bcrypt.hash(user.password, null, null, function(err, hash) {
         if(err) {
             return next(err);
         }
