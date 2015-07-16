@@ -10,12 +10,29 @@
                 <a href="index.html"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
             </li>
             <li>
-                <a href="javascript:;" data-toggle="collapse" data-target="#profile">
+                <a href="javascript:;" data-toggle="collapse" data-target="#nav-content">
+                    <i class="fa fa-fw fa-file"></i> 
+                        Content 
+                    <i class="fa fa-fw fa-caret-down"></i>
+                </a>
+                <ul id="nav-content" class="collapse">
+                    <li>
+                        <a href="/admin/content/create">Create</a>
+                    </li>
+                    <li>
+                        <a href="/admin/content">List</a>
+                    </li>
+                </ul>
+            </li>
+
+            <!-- User Profile -->
+            <li>
+                <a href="javascript:;" data-toggle="collapse" data-target="#nav-profile">
                     <i class="fa fa-fw fa-user"></i> 
                         Profile 
                     <i class="fa fa-fw fa-caret-down"></i>
                 </a>
-                <ul id="profile" class="collapse">
+                <ul id="nav-profile" class="collapse">
                     <li>
                         <a href="#">User Profile</a>
                     </li>
