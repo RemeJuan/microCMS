@@ -22,17 +22,30 @@ router.get('/edit/:slug', restrict, function(req, res){
       title: 'Edit Content',
       editView: true,
       content: content[0]
-    }); 
+    });
   });
 });
 
 router.post('/edit/:slug', restrict, function(req, res){
-  contentService.fetchContentItem(req.body, function(err, content) {
+  contentService.updateContent(req.body, function(err, content) {
+    if (err) {
+      return res.render('content', {
+        title: 'Edit Content',
+        editView: true,
+        content: req.body,
+        message: 'Error updating content',
+        messageClass: 'danger',
+      }); 
+    }
+
     return res.render('content', {
       title: 'Edit Content',
       editView: true,
-      content: content[0]
+      content: req.body,
+      message: 'Content updated successfully',
+      messageClass: 'success',
     }); 
+
   });
 });
 
@@ -48,8 +61,9 @@ router.post('/create', function(req, res, next) {
     if (err) {
       var vm = {
         title: 'Create Content',
-        input: req.body,
-        error: err,
+        content: req.body,
+        message: 'Slug needs to be unique',
+        messageClass: 'danger',
         editView: true
       };
       return res.render('content', vm);

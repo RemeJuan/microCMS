@@ -2,11 +2,11 @@ var Content = require('../models/content').Content;
 
 exports.createContent = function(content, next) {
     var newContent = new Content({
-        title: content.contentTitle,
-        slug: content.contentSlug,
-        body: content.contentBody,
-        meta: content.contentMeta,
-        keywords: content.contentKeywords
+        title: content.title,
+        slug: content.slug,
+        body: content.body,
+        meta: content.meta,
+        keywords: content.keywords
     });
 
     newContent.save(function(err) {
@@ -14,6 +14,20 @@ exports.createContent = function(content, next) {
             return next(err);
         }
         next(null);
+    });
+};
+
+exports.updateContent = function(content, next) {
+    Content.update({slug: content.slug}, {
+        title: content.title,
+        body: content.body,
+        meta: content.meta,
+        keywords: content.keywords
+    }, function(err, numberAffected, rawResponse, content) {
+       if (err) {
+           return next(err);
+       }
+       next(null, content);
     });
 };
 
@@ -40,10 +54,4 @@ exports.fetchContentItem = function(slug, next) {
         console.log(content);
         next(err, content);
     });
-};
-
-exports.updateContent = function(content, next) {
-    Content.findOneAndUpdate({
-        slug: content.slug
-    }
 };
