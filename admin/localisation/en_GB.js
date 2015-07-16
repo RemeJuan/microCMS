@@ -7,12 +7,12 @@ locale.createContent = 'Create Content'
 
 //Messages
 /*Global notification messages*/
-local.classError = 'danger';
+locale.classError = 'danger';
 locale.classSuccess = 'success';
 
 /*Content notification messages*/
 locale.contentUpdateSuccess = 'Content updated successfully'
-lcoale.contentUpdateError = 'Error updating content';
+locale.contentUpdateError = 'Error updating content';
 locale.slugError = 'Slug needs to be unique';
 
 module.exports = locale;
