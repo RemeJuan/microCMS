@@ -30,7 +30,7 @@ elements safe from accidental harm or PBKAC's. :D
 Current feature list is quite small, but this is a very active work in progress
 and will increase rapidly from here on out.
 
-** User Authentication
+* User Authentication
 
 ## Dependancies
 
@@ -65,14 +65,14 @@ App will not launch unless you have started your mongo server
 
 ## Change Log
 
+### v0.2.0
+Content CRUD
+
+### v0.1.2
+Admin Dashboard
+
 ### v0.1.1
 Logout
 
 ### v0.1.0
 * Initial commit
-
-Possible Resource:
-
-* [Bootstrap Live Editor](http://innovastudio.com/BootstrapLiveEditor/index.html)
-* [Summernote](http://summernote.org/#/)
-* [Bootstrap WYSIWYG](https://mindmup.github.io/bootstrap-wysiwyg/)
