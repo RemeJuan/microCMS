@@ -15,7 +15,7 @@ var contentSchema = new Schema({
 });
 
 contentSchema.path('slug').validate( function(value, next) {
-    contentService.findContent(value, function(err, content) {
+    contentService.createUpdateContent(value, function(err, content) {
         if(err) {
             return next(false);
         }

@@ -17,7 +17,7 @@ exports.addEditContent = function(content, next) {
     });
 };
 
-exports.findContent = function(slug, next) {
+exports.createUpdateContent = function(slug, next) {
     Content.findOneAndUpdate({
         slug: slug,
         upsert: true
@@ -26,11 +26,18 @@ exports.findContent = function(slug, next) {
     });
 };
 
-exports.fetchContent = function(content, next) {
+exports.getAllContent = function(content, next) {
     Content.find({
         
     }, function(err, content) {
-        console.log(content);
+        next(err, content);
+    });
+};
+
+exports.fetchContentItem = function(slug, next) {
+    Content.findOne({
+        slug: slug
+    }, function(err, content) {
         next(err, content);
     });
 };
