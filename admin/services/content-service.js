@@ -41,3 +41,9 @@ exports.fetchContentItem = function(slug, next) {
         next(err, content);
     });
 };
+
+exports.updateContent = function(content, next) {
+    Content.findOneAndUpdate({
+        slug: content.slug
+    }
+};

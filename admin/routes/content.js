@@ -26,6 +26,16 @@ router.get('/edit/:slug', restrict, function(req, res){
   });
 });
 
+router.post('/edit/:slug', restrict, function(req, res){
+  contentService.fetchContentItem(req.body, function(err, content) {
+    return res.render('content', {
+      title: 'Edit Content',
+      editView: true,
+      content: content[0]
+    }); 
+  });
+});
+
 router.get('/create', restrict, function(req, res){
   return res.render('content', {
     title: 'Create Content',
