@@ -54,6 +54,9 @@
      $('#wysiwyg-editor').wysiwyg().on('change', function(){
       $('#contentBody').val( $(this).cleanHtml() );
      });
+
+     $('#wysiwyg-editor').html( $('#contentBody').val() )
+
    });
   </script>
 {% endif %}
