@@ -17,15 +17,15 @@
         <div class="row">
             <div class="col-lg-12">
                 <form id="contentCreate" name="contentCreate" method="post">
-                <input id="contentTitle" name="contentTitle" type="text" class="form-control input-lg form-group" value="" placeholder="Content Title" required />
+                <input id="contentTitle" name="contentTitle" type="text" class="form-control input-lg form-group" value="{{ content.title }}" placeholder="Content Title" required />
 
-                <input id="contentSlug" name="contentSlug" type="text" class="form-control input-lg form-group" value="" placeholder="Content Slug" required />
+                <input id="contentSlug" name="contentSlug" type="text" class="form-control input-lg form-group" value="{{ content.slug }}" placeholder="Content Slug" required />
 
                     {% include 'wysiwyg.html' %}
 
-                <input id="contentMeta" name="contentMeta" type="text" class="form-control input-lg form-group " value="" placeholder="Meta Data" required />
+                <input id="contentMeta" name="contentMeta" type="text" class="form-control input-lg form-group " value="{{ content.meta }}" placeholder="Meta Data" required />
 
-                <input id="contentKeywords" name="contentKeywords" type="text" class="form-control input-lg form-group " value="" placeholder="Keywords" required />
+                <input id="contentKeywords" name="contentKeywords" type="text" class="form-control input-lg form-group" value="{{ content.keywords }}" placeholder="Keywords" required />
 
                 <div class="btn-group pull-right">
                     <button class="btn btn-primary" type="submit">Save</button>

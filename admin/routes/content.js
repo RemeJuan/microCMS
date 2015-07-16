@@ -20,8 +20,8 @@ router.get('/edit/:slug', restrict, function(req, res){
   contentService.fetchContentItem(req.params.slug, function(err, content) {
     return res.render('content', {
       title: 'Edit Content',
-      listView: true,
-      content: content
+      editView: true,
+      content: content[0]
     }); 
   });
 });

@@ -29,7 +29,6 @@ exports.getAllContent = function(content, next) {
     Content.find({
         
     }, function(err, content) {
-        console.log(content);
         next(err, content);
     });
 };

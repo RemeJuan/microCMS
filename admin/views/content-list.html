@@ -23,8 +23,12 @@
             <div class="col-lg-12">
             {% for c in content %}
               {% if loop.first %}<ul>{% endif %}
-                <li class="col-lg-6">{{ c.title }}</li>
-                <li class="col-lg-6">{{ c.created|date('d M Y') }}</li>
+                <li class="col-lg-12">
+                    <div class="title col-lg-6">
+                        <a href="/admin/content/edit/{{ c.slug }}">{{ c.title }}</a>
+                    </div>
+                    <div class="createdDate col-lg-6">{{ c.created|date('d M Y') }}</div>
+                </li>
               {% if loop.last %}</ul>{% endif %}
             {% endfor %}
             </div>
