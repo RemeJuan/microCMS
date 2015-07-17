@@ -65,6 +65,12 @@ App will not launch unless you have started your mongo server
 
 ## Change Log
 
+### v0.3.0
+User profile view and modify
+
+### v0.2.1
+Localisation - Moved all language data to variables inside a language file
+
 ### v0.2.0
 Content CRUD
 

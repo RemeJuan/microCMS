@@ -2,14 +2,14 @@
 <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
     <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
     <div>
-        <a class="navbar-brand" href="">{{ title }}</a>
+        <a class="navbar-brand" href="">{{ lang.siteName }}</a>
     </div>
     <div class="collapse navbar-collapse navbar-ex1-collapse">
         <ul class="nav navbar-nav side-nav">
-            <li class="active">
+            <li class="">
                 <a href="/admin"><i class="fa fa-fw fa-dashboard"></i> {{ lang.navDashboard }} </a>
             </li>
-            <li>
+            <li class="">
                 <a href="javascript:;" data-toggle="collapse" data-target="#nav-content">
                     <i class="fa fa-fw fa-file"></i> 
                         {{ lang.navContent }} 
@@ -26,20 +26,8 @@
             </li>
 
             <!-- User Profile -->
-            <li>
-                <a href="javascript:;" data-toggle="collapse" data-target="#nav-profile">
-                    <i class="fa fa-fw fa-user"></i> 
-                        {{ lang.navProfile }} 
-                    <i class="fa fa-fw fa-caret-down"></i>
-                </a>
-                <ul id="nav-profile" class="collapse">
-                    <li>
-                        <a href="#">{{ lang.navProUser }}</a>
-                    </li>
-                    <li>
-                        <a href="#">{{ lang.navProSettings }}</a>
-                    </li>
-                </ul>
+            <li class="">
+                <a href="/admin/profile"><i class="fa fa-fw fa-user"></i> {{ lang.navProfile }} </a>
             </li>
             <li>
                 <a href="/admin/logout"><i class="fa fa-fw fa-power-off"></i>{{ lang.navLogout }}</a>
