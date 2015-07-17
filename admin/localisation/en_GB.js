@@ -24,6 +24,8 @@ locale.profileUserTitle = 'Profile';
 locale.userNameSurname = 'Name and Surname:';
 locale.email = 'Email Address:';
 locale.password = 'Password:';
+locale.gravatar = 'Profile Pic';
+locale.picFootnote = 'Gravatar image'
 
 //Messages
 /*Global notification messages*/

@@ -4,12 +4,14 @@ var config = require('../../config');
 var userService = require('../services/user-service');
 var restrict = require('../auth/restrict');
 var locale = require('../localisation/en_GB');
+var gravatar = require('gravatar');
 
 var app = express();
 
 router.get('/', restrict, function(req, res){
     return res.render('profile', {
       content: req.user,
+      gravatar: gravatar.url(req.user.email, {s: 200}),
       lang: locale,
       isProfile: true
     }); 

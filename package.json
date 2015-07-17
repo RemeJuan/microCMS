@@ -1,6 +1,6 @@
 {
   "name": "microCMS",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "description": "microCMS",
   "author": "Reme Le Hane info@remelehane.me",
   "dependencies": {
@@ -14,6 +14,7 @@
     "express": "^4.12.3",
     "express-session": "^1.11.3",
     "express-useragent": "^0.1.8",
+    "gravatar": "^1.2.0",
     "gzippo": "latest",
     "mongoose": "^4.0.5",
     "morgan": "~1.0.0",
