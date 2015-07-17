@@ -7,20 +7,20 @@
     <div class="collapse navbar-collapse navbar-ex1-collapse">
         <ul class="nav navbar-nav side-nav">
             <li class="active">
-                <a href="index.html"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
+                <a href="/admin"><i class="fa fa-fw fa-dashboard"></i> {{ nav.navDashboard }} </a>
             </li>
             <li>
                 <a href="javascript:;" data-toggle="collapse" data-target="#nav-content">
                     <i class="fa fa-fw fa-file"></i> 
-                        Content 
+                        {{ nav.navContent }} 
                     <i class="fa fa-fw fa-caret-down"></i>
                 </a>
                 <ul id="nav-content" class="collapse">
                     <li>
-                        <a href="/admin/content/create">Create</a>
+                        <a href="/admin/content/create">{{ nav.navConCreate}}</a>
                     </li>
                     <li>
-                        <a href="/admin/content">List</a>
+                        <a href="/admin/content">{{ nav.navConList }}</a>
                     </li>
                 </ul>
             </li>
@@ -29,20 +29,20 @@
             <li>
                 <a href="javascript:;" data-toggle="collapse" data-target="#nav-profile">
                     <i class="fa fa-fw fa-user"></i> 
-                        Profile 
+                        {{ nav.navProfile }} 
                     <i class="fa fa-fw fa-caret-down"></i>
                 </a>
                 <ul id="nav-profile" class="collapse">
                     <li>
-                        <a href="#">User Profile</a>
+                        <a href="#">{{ nav.navProUser }}</a>
                     </li>
                     <li>
-                        <a href="#">Settings</a>
+                        <a href="#">{{ nav.navProSettings }}</a>
                     </li>
                 </ul>
             </li>
             <li>
-                <a href="/admin/logout"><i class="fa fa-fw fa-power-off"></i>Logout</a>
+                <a href="/admin/logout"><i class="fa fa-fw fa-power-off"></i>{{ nav.navLogout }}</a>
             </li>
         </ul>
     </div>

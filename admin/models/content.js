@@ -11,6 +11,10 @@ var contentSchema = new Schema({
     created: {
         type: Date, 
         default: Date.now
+    },
+    lastmodified: {
+        type: Date, 
+        default: Date.now
     }
 });
 
