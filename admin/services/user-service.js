@@ -29,3 +29,18 @@ exports.findUser = function(email, next) {
         next(err, user);
     });
 };
+
+exports.updateUser = function(user, next) {
+    User.update({email: user.email}, {
+        firstName: user.firstName,
+        lastName: user.lastName,
+        email: user.email,
+        password: user.password,
+        $inc: {__v:1}
+    }, function(err, numberAffected, rawResponse, user) {
+       if (err) {
+           return next(err);
+       }
+       next(null, user);
+    });
+};

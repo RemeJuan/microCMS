@@ -17,7 +17,13 @@ locale.signup = 'Sign Up';
 //Content
 locale.contentTitle = 'Content';
 locale.editContent = 'Edit Content';
-locale.createContent = 'Create Content'
+locale.createContent = 'Create Content';
+
+// Profile
+locale.profileUserTitle = 'Profile';
+locale.userNameSurname = 'Name and Surname:';
+locale.email = 'Email Address:';
+locale.password = 'Password:';
 
 //Messages
 /*Global notification messages*/
@@ -39,6 +45,8 @@ locale.snVal = 'Please enter your last name';
 locale.emailVal = 'Please enter your email';
 locale.pwVal = 'Please enter your password';
 locale.emailInvaledVal = 'That email is already in use';
+locale.updateUserErr = 'There was a problem updating your details';
+locale.updateUserSuc = 'Details updated sucessfully';
 
 //Dashboard
 locale.dashboard = 'Dashboard';
@@ -49,8 +57,6 @@ locale.navContent = 'Content';
 locale.navConCreate = 'Create';
 locale.navConList = 'List';
 locale.navProfile = 'Profile';
-locale.navProUser = 'User Profile';
-locale.navProSettings = 'Settings';
 locale.navLogout = 'Logout';
 
 module.exports = locale;
