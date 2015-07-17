@@ -24,13 +24,13 @@
 
                     {% include 'wysiwyg.html' %}
 
-                <input id="contentMeta" name="meta" type="text" class="form-control input-lg form-group " value="{{ content.meta }}" placeholder="Meta Data" required />
+                <input id="contentMeta" name="meta" type="text" class="form-control input-lg form-group " value="{{ content.meta }}" placeholder="Meta Data" />
 
-                <input id="contentKeywords" name="keywords" type="text" class="form-control input-lg form-group" value="{{ content.keywords }}" placeholder="Keywords" required />
+                <input id="contentKeywords" name="keywords" type="text" class="form-control input-lg form-group" value="{{ content.keywords }}" placeholder="Keywords" />
 
                 <div class="btn-group pull-right">
-                    <button class="btn btn-primary" type="submit">Save</button>
-                    <a class="btn btn-danger" href="/admin/content">Cancel</a>
+                    <button class="btn btn-primary" type="submit">{{ lnag.saveButt }}</button>
+                    <a class="btn btn-danger" href="/admin/content">{{ lang.cancelButt }}</a>
                 </div>
                 </form>
             </div>

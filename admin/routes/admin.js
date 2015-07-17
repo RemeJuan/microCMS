@@ -4,6 +4,7 @@ var config = require('../../config');
 var passport = require('passport');
 var userService = require('../services/user-service');
 var restrict = require('../auth/restrict');
+var locale = require('../localisation/en_GB');
 
 var app = express();
 
@@ -13,7 +14,7 @@ router.get('/', function(req, res){
     return res.render('index', {
       title: config.siteName,
       username: userName,
-      nav: locale
+      lang: locale
     }); 
   };
 
@@ -25,14 +26,14 @@ router.get('/login', function(req, res){
   res.render('login', {
     title: config.siteName,
     error: req.flash('error'),
-    nav: locale
+    lang: locale
   });
 });
 
 router.get('/create', function(req, res){
   res.render('signup', {
     title: config.siteName,
-    nav: locale
+    lang: locale
   })
 });
 
@@ -43,7 +44,7 @@ router.post('/create', function(req, res, next) {
         title: 'Create an account',
         input: req.body,
         error: err,
-        nav: locale
+        lang: locale
       };
       delete vm.input.password;
       return res.render('signup', vm);

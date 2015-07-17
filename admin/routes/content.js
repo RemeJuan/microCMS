@@ -7,15 +7,13 @@ var locale = require('../localisation/en_GB');
 
 var app = express();
 
-console.log(locale);
-
 router.get('/', restrict, function(req, res){
   contentService.getAllContent(req.body, function(err, content) {
     return res.render('content', {
       title: locale.contentTitle,
       listView: true,
       content: content,
-      nav: locale
+      lang: locale
     }); 
   });
 });
@@ -26,7 +24,7 @@ router.get('/edit/:slug', restrict, function(req, res){
       title: locale.editContent,
       editView: true,
       content: content[0],
-      nav: locale
+      lang: locale
     });
   });
 });
@@ -40,7 +38,7 @@ router.post('/edit/:slug', restrict, function(req, res){
         content: req.body,
         message: locale.contentUpdateError,
         messageClass: locale.classError,
-        nav: locale
+        lang: locale
       }); 
     }
 
@@ -50,7 +48,7 @@ router.post('/edit/:slug', restrict, function(req, res){
       content: req.body,
       message: locale.contentUpdateSuccess,
       messageClass: locale.classSuccess,
-      nav: locale
+      lang: locale
     }); 
 
   });
@@ -60,7 +58,7 @@ router.get('/create', restrict, function(req, res){
   return res.render('content', {
     title: locale.createContent,
     editView: true,
-      nav: locale
+    lang: locale
   }); 
 });
 
@@ -73,7 +71,7 @@ router.post('/create', function(req, res, next) {
         message: locale.slugError,
         messageClass: locale.classError,
         editView: true,
-        nav: locale
+        lang: locale
       };
       return res.render('content', vm);
     }
