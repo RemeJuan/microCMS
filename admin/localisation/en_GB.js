@@ -17,7 +17,13 @@ locale.signup = 'Sign Up';
 //Content
 locale.contentTitle = 'Content';
 locale.editContent = 'Edit Content';
-locale.createContent = 'Create Content'
+locale.createContent = 'Create Content';
+
+// Profile
+locale.profileUserTitle = 'Profile';
+locale.userNameSurname = 'Name and Surname:';
+locale.email = 'Email Address:';
+locale.password = 'Password:';
 
 //Messages
 /*Global notification messages*/
