@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var config = require('../../config');
-var contentService = require('../services/user-service');
+var userService = require('../services/user-service');
 var restrict = require('../auth/restrict');
 var locale = require('../localisation/en_GB');
 
@@ -9,10 +9,30 @@ var app = express();
 
 router.get('/', restrict, function(req, res){
     return res.render('profile', {
-      listView: true,
       content: req.user,
       lang: locale
     }); 
+});
+
+router.post('/', restrict, function(req, res) {
+  userService.updateUser(req.body, function(err, user) {
+    console.log('body', req.body);
+    if (err) {
+      return res.render('profile', {
+        content: req.body,
+        lang: locale,
+        message: locale.updateUserErr,
+        messageClass: locale.classError,
+      });
+    }
+
+    return res.render('profile', {
+      content: req.body,
+      lang: locale,
+      message: locale.updateUserSuc,
+      messageClass: locale.classSuccess,
+    });
+  });
 });
 
 // router.get('/create', restrict, function(req, res){

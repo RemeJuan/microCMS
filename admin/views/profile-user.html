@@ -25,8 +25,8 @@
                             <span class="input-group-addon">
                                 <i class="fa fa-fw fa-user"></i>
                             </span>
-                            <input id="firstName" type="text" class="form-control" name="firstName" value="{{content.firstName}}" placeholder="First Name">
-                            <input id="lastName" type="text" class="form-control" name="lastName" value="{{content.lastName}}" placeholder="Last Name">                                              
+                            <input id="firstName" type="text" class="form-control" name="firstName" value="{{content.firstName}}" placeholder="First Name" required />
+                            <input id="lastName" type="text" class="form-control" name="lastName" value="{{content.lastName}}" placeholder="Last Name" required />                                              
                         </div>  
                     </div>                 
 
@@ -36,7 +36,7 @@
                             <span class="input-group-addon">
                                 <i class="fa fa-fw fa-envelope-o"></i>
                             </span>
-                            <input id="email" type="email" class="form-control" name="email" value="{{content.email}}" placeholder="Email address">                                        
+                            <input id="email" type="email" class="form-control" name="email" value="{{content.email}}" placeholder="Email address" required />                                        
                         </div>
                     </div>
                     
@@ -46,13 +46,13 @@
                             <span class="input-group-addon">
                                 <i class="fa fa-fw fa-lock"></i>
                             </span>
-                            <input id="login-password" type="password" class="form-control" name="password" placeholder="password">
+                            <input id="login-password" type="password" class="form-control" name="password" placeholder="password" required />
                         </div>
                     </div>  
 
                     <div class="btn-group pull-right">
                         <button class="btn btn-primary" type="submit">{{ lang.saveButt }}</button>
-                        <a class="btn btn-danger" href="/admin/content">{{ lang.cancelButt }}</a>
+                        <a class="btn btn-danger" href="/admin/profile">{{ lang.cancelButt }}</a>
                     </div>
 
                 </form>
