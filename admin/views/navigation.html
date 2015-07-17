@@ -1,33 +1,26 @@
 <!-- Navigation -->
 <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
     <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
-    <div class="navbar-header">
+    <div>
         <a class="navbar-brand" href="">{{ title }}</a>
     </div>
-<!--     <ol class="nav navbar-right top-nav breadcrumb">
-        <li class="active">
-            <i class="fa fa-dashboard"></i> Dashboard
-        </li>
-    </ol> -->
     <div class="collapse navbar-collapse navbar-ex1-collapse">
         <ul class="nav navbar-nav side-nav">
             <li class="active">
-                <a href="/admin"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
+                <a href="/admin"><i class="fa fa-fw fa-dashboard"></i> {{ lang.navDashboard }} </a>
             </li>
-
-            <!-- Pages -->
             <li>
                 <a href="javascript:;" data-toggle="collapse" data-target="#nav-content">
                     <i class="fa fa-fw fa-file"></i> 
-                        Content 
+                        {{ lang.navContent }} 
                     <i class="fa fa-fw fa-caret-down"></i>
                 </a>
                 <ul id="nav-content" class="collapse">
                     <li>
-                        <a href="/admin/content/create">Create</a>
+                        <a href="/admin/content/create">{{ lang.navConCreate}}</a>
                     </li>
                     <li>
-                        <a href="/admin/content">List</a>
+                        <a href="/admin/content">{{ lang.navConList }}</a>
                     </li>
                 </ul>
             </li>
@@ -36,20 +29,20 @@
             <li>
                 <a href="javascript:;" data-toggle="collapse" data-target="#nav-profile">
                     <i class="fa fa-fw fa-user"></i> 
-                        Profile 
+                        {{ lang.navProfile }} 
                     <i class="fa fa-fw fa-caret-down"></i>
                 </a>
                 <ul id="nav-profile" class="collapse">
                     <li>
-                        <a href="#">User Profile</a>
+                        <a href="#">{{ lang.navProUser }}</a>
                     </li>
                     <li>
-                        <a href="#">Settings</a>
+                        <a href="#">{{ lang.navProSettings }}</a>
                     </li>
                 </ul>
             </li>
             <li>
-                <a href="/admin/logout"><i class="fa fa-fw fa-power-off"></i>Logout</a>
+                <a href="/admin/logout"><i class="fa fa-fw fa-power-off"></i>{{ lang.navLogout }}</a>
             </li>
         </ul>
     </div>

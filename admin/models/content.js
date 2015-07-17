@@ -1,14 +1,19 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 var contentService = require('../services/content-service');
+var locale = require('../localisation/en_GB');
 
 var contentSchema = new Schema({
-    title: {type: String, required: 'Please enter a title'},
-    slug: {type: String, required: 'Please enter your first name'},
-    body:  {type: String, required: 'Please enter your last name'},
-    meta: {type: String, required: 'Please enter your email'},
-    keywords: {type: String, required: 'Please enter your password'},
+    title: {type: String, required: locale.conTitVal},
+    slug: {type: String, required: locale.conSlugVal},
+    body:  {type: String, required: locale.conBodyVal},
+    meta: {type: String},
+    keywords: {type: String},
     created: {
+        type: Date, 
+        default: Date.now
+    },
+    lastmodified: {
         type: Date, 
         default: Date.now
     }
@@ -21,7 +26,7 @@ contentSchema.path('slug').validate( function(value, next) {
         }
         next(!content);
     });
-}, 'That slug is already in use');
+}, locale.slugInUseError);
 
 var Content = mongoose.model('Content', contentSchema);
 

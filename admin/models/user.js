@@ -1,12 +1,13 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 var userService = require('../services/user-service');
+var locale = require('../localisation/en_GB');
 
 var userSchema = new Schema({
-    firstName: {type: String, required: 'Please enter your first name'},
-    lastName:  {type: String, required: 'Please enter your last name'},
-    email: {type: String, required: 'Please enter your email'},
-    password: {type: String, required: 'Please enter your password'},
+    firstName: {type: String, required: locale.fnVal },
+    lastName:  {type: String, required: locale.snVal},
+    email: {type: String, required: locale.emailVal},
+    password: {type: String, required: locale.pwVal},
     created: {
         type: Date, 
         default: Date.now
@@ -20,7 +21,7 @@ userSchema.path('email').validate( function(value, next) {
         }
         next(!user);
     });
-}, 'That email is already in use');
+}, locale.emailInvaledVal );
 
 var User = mongoose.model('User', userSchema);
 

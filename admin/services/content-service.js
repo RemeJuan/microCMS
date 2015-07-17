@@ -22,7 +22,8 @@ exports.updateContent = function(content, next) {
         title: content.title,
         body: content.body,
         meta: content.meta,
-        keywords: content.keywords
+        keywords: content.keywords,
+        $inc: {__v:1}
     }, function(err, numberAffected, rawResponse, content) {
        if (err) {
            return next(err);
