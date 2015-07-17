@@ -13,7 +13,8 @@ router.get('/', restrict, function(req, res){
       title: locale.contentTitle,
       listView: true,
       content: content,
-      lang: locale
+      lang: locale,
+      isContent: true
     }); 
   });
 });
@@ -24,7 +25,8 @@ router.get('/edit/:slug', restrict, function(req, res){
       title: locale.editContent,
       editView: true,
       content: content[0],
-      lang: locale
+      lang: locale,
+      isContent: true
     });
   });
 });
@@ -38,7 +40,8 @@ router.post('/edit/:slug', restrict, function(req, res){
         content: req.body,
         message: locale.contentUpdateError,
         messageClass: locale.classError,
-        lang: locale
+        lang: locale,
+        isContent: true
       }); 
     }
 
@@ -48,7 +51,8 @@ router.post('/edit/:slug', restrict, function(req, res){
       content: req.body,
       message: locale.contentUpdateSuccess,
       messageClass: locale.classSuccess,
-      lang: locale
+      lang: locale,
+      isContent: true
     }); 
 
   });
@@ -58,7 +62,8 @@ router.get('/create', restrict, function(req, res){
   return res.render('content', {
     title: locale.createContent,
     editView: true,
-    lang: locale
+    lang: locale,
+    isContent: true
   }); 
 });
 
@@ -71,7 +76,8 @@ router.post('/create', function(req, res, next) {
         message: locale.slugError,
         messageClass: locale.classError,
         editView: true,
-        lang: locale
+        lang: locale,
+        isContent: true
       };
       return res.render('content', vm);
     }

@@ -10,7 +10,8 @@ var app = express();
 router.get('/', restrict, function(req, res){
     return res.render('profile', {
       content: req.user,
-      lang: locale
+      lang: locale,
+      isProfile: true
     }); 
 });
 
@@ -23,6 +24,7 @@ router.post('/', restrict, function(req, res) {
         lang: locale,
         message: locale.updateUserErr,
         messageClass: locale.classError,
+      isProfile: true
       });
     }
 
@@ -31,6 +33,7 @@ router.post('/', restrict, function(req, res) {
       lang: locale,
       message: locale.updateUserSuc,
       messageClass: locale.classSuccess,
+      isProfile: true
     });
   });
 });

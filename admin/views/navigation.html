@@ -6,16 +6,18 @@
     </div>
     <div class="collapse navbar-collapse navbar-ex1-collapse">
         <ul class="nav navbar-nav side-nav">
-            <li class="">
+            <li class="{% if isDashboard %} active {% endif %}">
                 <a href="/admin"><i class="fa fa-fw fa-dashboard"></i> {{ lang.navDashboard }} </a>
             </li>
-            <li class="">
-                <a href="javascript:;" data-toggle="collapse" data-target="#nav-content">
+            <li class="{% if isContent %} active {% endif %}">
+                <a href="javascript:;" data-toggle="collapse" data-target="#nav-content" 
+                {% if isContent %} aria-expanded="true" {% endif %}>
                     <i class="fa fa-fw fa-file"></i> 
                         {{ lang.navContent }} 
                     <i class="fa fa-fw fa-caret-down"></i>
                 </a>
-                <ul id="nav-content" class="collapse">
+                <ul id="nav-content" class="collapse {% if isContent %} in {% endif %}" 
+                {% if isContent %} aria-expanded="true" {% endif %}> 
                     <li>
                         <a href="/admin/content/create">{{ lang.navConCreate}}</a>
                     </li>
@@ -26,7 +28,7 @@
             </li>
 
             <!-- User Profile -->
-            <li class="">
+            <li class="{% if isProfile %} active {% endif %}">
                 <a href="/admin/profile"><i class="fa fa-fw fa-user"></i> {{ lang.navProfile }} </a>
             </li>
             <li>
