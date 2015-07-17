@@ -3,15 +3,17 @@ var router = express.Router();
 var config = require('../../config');
 var contentService = require('../services/content-service');
 var restrict = require('../auth/restrict');
+var locale = require('../localisation/en_GB');
 
 var app = express();
 
 router.get('/', restrict, function(req, res){
   contentService.getAllContent(req.body, function(err, content) {
     return res.render('content', {
-      title: 'Content',
+      title: locale.contentTitle,
       listView: true,
-      content: content
+      content: content,
+      lang: locale
     }); 
   });
 });
@@ -19,9 +21,10 @@ router.get('/', restrict, function(req, res){
 router.get('/edit/:slug', restrict, function(req, res){
   contentService.fetchContentItem(req.params.slug, function(err, content) {
     return res.render('content', {
-      title: 'Edit Content',
+      title: locale.editContent,
       editView: true,
-      content: content[0]
+      content: content[0],
+      lang: locale
     });
   });
 });
@@ -30,20 +33,22 @@ router.post('/edit/:slug', restrict, function(req, res){
   contentService.updateContent(req.body, function(err, content) {
     if (err) {
       return res.render('content', {
-        title: 'Edit Content',
+        title: locale.editContent,
         editView: true,
         content: req.body,
-        message: 'Error updating content',
-        messageClass: 'danger',
+        message: locale.contentUpdateError,
+        messageClass: locale.classError,
+        lang: locale
       }); 
     }
 
     return res.render('content', {
-      title: 'Edit Content',
+      title: locale.editContent,
       editView: true,
       content: req.body,
-      message: 'Content updated successfully',
-      messageClass: 'success',
+      message: locale.contentUpdateSuccess,
+      messageClass: locale.classSuccess,
+      lang: locale
     }); 
 
   });
@@ -51,8 +56,9 @@ router.post('/edit/:slug', restrict, function(req, res){
 
 router.get('/create', restrict, function(req, res){
   return res.render('content', {
-    title: 'Create Content',
-    editView: true
+    title: locale.createContent,
+    editView: true,
+    lang: locale
   }); 
 });
 
@@ -60,11 +66,12 @@ router.post('/create', function(req, res, next) {
   contentService.createContent(req.body, function(err) {
     if (err) {
       var vm = {
-        title: 'Create Content',
+        title: locale.createContent,
         content: req.body,
-        message: 'Slug needs to be unique',
-        messageClass: 'danger',
-        editView: true
+        message: locale.slugError,
+        messageClass: locale.classError,
+        editView: true,
+        lang: locale
       };
       return res.render('content', vm);
     }
