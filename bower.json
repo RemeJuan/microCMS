@@ -1,5 +1,5 @@
 {
-  "name": "reme-ang",
+  "name": "microCMS",
   "version": "0.0.0",
   "dependencies": {
     "flexslider": "latest",
@@ -13,9 +13,8 @@
     "angular-mocks": "^1.3.0"
   },
   "appPath": "app",
-  "moduleName": "remeport",
+  "moduleName": "microCMS",
   "resolutions": {
-    "angular": "1.4.2",
     "jquery": "1.11.3"
   }
 }
