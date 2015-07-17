@@ -14,7 +14,8 @@ router.get('/', function(req, res){
     return res.render('index', {
       title: config.siteName,
       username: userName,
-      lang: locale
+      lang: locale,
+      isDashboard: true
     }); 
   };
 

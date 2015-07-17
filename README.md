@@ -65,6 +65,9 @@ App will not launch unless you have started your mongo server
 
 ## Change Log
 
+### v0.3.1
+Nav updates for current active state
+
 ### v0.3.0
 User profile view and modify
 
