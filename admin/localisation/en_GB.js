@@ -21,11 +21,16 @@ locale.createContent = 'Create Content';
 
 // Profile
 locale.profileUserTitle = 'Profile';
-locale.userNameSurname = 'Name and Surname:';
-locale.email = 'Email Address:';
-locale.password = 'Password:';
+locale.labUserNameSurname = 'Name and Surname:';
+locale.labEmail = 'Email Address:';
+locale.labPassword = 'Password:';
 locale.gravatar = 'Profile Pic';
-locale.picFootnote = 'Gravatar image'
+locale.picFootnote = 'Gravatar image';
+locale.phFirstName = 'First Name';
+locale.phLastName = 'Last Name';
+locale.phEmail = 'Email Address';
+locale.phPassword = 'Password';
+locale.phConPassword = 'Confirmation';
 
 /*User Admin*/
 locale.usersMan = 'Manage Users';
