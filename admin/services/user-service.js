@@ -30,17 +30,45 @@ exports.findUser = function(email, next) {
     });
 };
 
-exports.updateUser = function(user, next) {
-    User.update({email: user.email}, {
-        firstName: user.firstName,
-        lastName: user.lastName,
-        email: user.email,
-        password: user.password,
-        $inc: {__v:1}
-    }, function(err, numberAffected, rawResponse, user) {
-       if (err) {
-           return next(err);
-       }
-       next(null, user);
+exports.getAllUsers = function(users, next) {
+    User.find({
+        
+    }, function(err, users) {
+        next(err, users);
     });
+};
+
+exports.updateUser = function(user, next) {
+    console.log(user.password);
+    if (user.password !== '') {
+        bcrypt.hash(user.password, null, null, function(err, hash) {
+            if(err) {
+                return next(err);
+            }
+            User.update({email: user.email}, {
+                firstName: user.firstName,
+                lastName: user.lastName,
+                email: user.email,
+                password: hash,
+                $inc: {__v:1}
+            }, function(err, numberAffected, rawResponse, user) {
+               if (err) {
+                   return next(err);
+               }
+               next(null, user);
+            });
+        });
+    } else {
+        User.update({email: user.email}, {
+            firstName: user.firstName,
+            lastName: user.lastName,
+            email: user.email,
+            $inc: {__v:1}
+        }, function(err, numberAffected, rawResponse, user) {
+           if (err) {
+               return next(err);
+           }
+           next(null, user);
+        });
+    }
 };

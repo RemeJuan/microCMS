@@ -28,33 +28,39 @@
                 <div class="col-lg-9">
                     <form id="userProfile" name="userProfile" method="post">
                         <div>
-                            <label for="firstName">{{ lang.userNameSurname }}</label>
+                            <label for="firstName">{{ lang.labUserNameSurname }}</label>
                             <div class="input-group name-group">
                                 <span class="input-group-addon">
                                     <i class="fa fa-fw fa-user"></i>
                                 </span>
-                                <input id="firstName" type="text" class="form-control" name="firstName" value="{{content.firstName}}" placeholder="First Name" required />
-                                <input id="lastName" type="text" class="form-control" name="lastName" value="{{content.lastName}}" placeholder="Last Name" required />                                              
+                                <input id="firstName" type="text" class="form-control" name="firstName" value="{{content.firstName}}" placeholder="{{ lang.phFirstName }}" required />
+                                <input id="lastName" type="text" class="form-control" name="lastName" value="{{content.lastName}}" placeholder="{{ lang.phLastName }}" required />                                              
                             </div>  
                         </div>                 
 
                         <div>
-                            <label for="email">{{ lang.email }}</label>
+                            <label for="email">{{ lang.labEmail }}</label>
                             <div class="input-group">
                                 <span class="input-group-addon">
                                     <i class="fa fa-fw fa-envelope-o"></i>
                                 </span>
-                                <input id="email" type="email" class="form-control" name="email" value="{{content.email}}" placeholder="Email address" required />                                        
+                                <input id="login-password" type="password" class="form-control" name="password" placeholder="{{ lang.phPassword }}" onchange="form.confirmPassword.pattern = this.value;" />                                        
                             </div>
                         </div>
                         
                         <div>
-                            <label for="password">{{ lang.password }}</label>
+                            <label for="password">{{ lang.labPassword }}</label>
                             <div class="input-group">
                                 <span class="input-group-addon">
                                     <i class="fa fa-fw fa-lock"></i>
                                 </span>
-                                <input id="login-password" type="password" class="form-control" name="password" placeholder="password" required />
+                                <input id="login-password" type="password" class="form-control" name="password" placeholder="{{ lang.phPassword }}" required />
+                            </div>
+                            <div class="input-group">
+                                <span class="input-group-addon">
+                                    <i class="fa fa-fw fa-lock"></i>
+                                </span>
+                                <input id="confirmPassword" type="password" class="form-control" name="confirmPassword" placeholder="{{ lang.phConPassword }}" />
                             </div>
                         </div>  
 

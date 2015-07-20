@@ -4,7 +4,7 @@ var locale = {};
 locale.saveButt = 'Save';
 locale.cancelButt = 'Cancel';
 
-/*Headings*/
+/*Headings and Labels*/
 locale.headTitle = 'Title';
 locale.headDate = 'Date';
 locale.siteName = 'microCMS';
@@ -21,11 +21,24 @@ locale.createContent = 'Create Content';
 
 // Profile
 locale.profileUserTitle = 'Profile';
-locale.userNameSurname = 'Name and Surname:';
-locale.email = 'Email Address:';
-locale.password = 'Password:';
+locale.labUserNameSurname = 'Name and Surname:';
+locale.labEmail = 'Email Address:';
+locale.labPassword = 'Password:';
 locale.gravatar = 'Profile Pic';
-locale.picFootnote = 'Gravatar image'
+locale.picFootnote = 'Gravatar image';
+locale.phFirstName = 'First Name';
+locale.phLastName = 'Last Name';
+locale.phEmail = 'Email Address';
+locale.phPassword = 'Password';
+locale.phConPassword = 'Confirmation';
+
+/*User Admin*/
+locale.usersMan = 'Manage Users';
+locale.headName = 'Users Name';
+locale.headEmail = 'Users E-mail Address'
+
+/*Site Admin*/
+locale.siteAdmin = 'Site Administration';
 
 //Messages
 /*Global notification messages*/
@@ -58,6 +71,9 @@ locale.navDashboard = 'Dashboard';
 locale.navContent = 'Content';
 locale.navConCreate = 'Create';
 locale.navConList = 'List';
+locale.navAdmin = 'Administration';
+locale.navSiteAdmin = 'Site Administration';
+locale.navUserMan = 'User Management';
 locale.navProfile = 'Profile';
 locale.navLogout = 'Logout';
 
