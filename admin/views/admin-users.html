@@ -24,10 +24,16 @@
                   {% if loop.first %}<ul>{% endif %}
                     <li class="col-lg-12">
                         <div class="title col-lg-6">
-                            <a href="/admin/content/edit/{{ c.slug }}">{{ u.firstName }} {{u.lastName}}</a>
+                            <a  href="" 
+                                data-fn="{{ u.firstName }}" 
+                                data-ln="{{ u.lastName }}"
+                                data-email="{{ u.email }}"
+                                onclick="populateUserForm(this); return false;">
+                                {{ u.firstName }} {{u.lastName}}
+                            </a>
                         </div>
                         <div class="title col-lg-6">
-                            <a href="/admin/content/edit/{{ c.slug }}">{{ u.email }}</a>
+                            {{ u.email }}
                         </div>
                     </li>
                   {% if loop.last %}</ul>{% endif %}
@@ -35,7 +41,7 @@
             </div>
 
             <div class="col-lg-6 profile-user">
-            <form id="userProfile" name="userProfile" method="post">
+            <form id="userDetails" name="userDetails" method="" onsubmit="updateUserDetails(this); return false;">
                 <div>
                     <label for="firstName">{{ lang.userNameSurname }}</label>
                     <div class="input-group name-group">
@@ -63,10 +69,10 @@
                         <span class="input-group-addon">
                             <i class="fa fa-fw fa-lock"></i>
                         </span>
-                        <input id="login-password" type="password" class="form-control" name="password" placeholder="password" required />
+                        <input id="login-password" type="password" class="form-control" name="password" placeholder="password" />
                     </div>
                 </div>  
-
+                <span id="message" class="pull-left"></span>
                 <div class="btn-group pull-right">
                     <button class="btn btn-primary" type="submit">{{ lang.saveButt }}</button>
                     <a class="btn btn-danger" href="/admin/profile">{{ lang.cancelButt }}</a>
