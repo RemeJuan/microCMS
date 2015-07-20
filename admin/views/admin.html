@@ -1,0 +1,11 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+	{% if siteAdmin %}
+		{% include 'admin-site.html' %}
+	{% endif %}
+
+	{% if usersAdmin %}
+		{% include 'admin-users.html' %}
+	{% endif %}
+{% endblock %}

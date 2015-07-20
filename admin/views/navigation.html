@@ -1,14 +1,16 @@
 <!-- Navigation -->
 <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
     <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
-    <div>
+    <div class="navbar-header">
         <a class="navbar-brand" href="">{{ lang.siteName }}</a>
     </div>
+
     <div class="collapse navbar-collapse navbar-ex1-collapse">
         <ul class="nav navbar-nav side-nav">
             <li class="{% if isDashboard %} active {% endif %}">
                 <a href="/admin"><i class="fa fa-fw fa-dashboard"></i> {{ lang.navDashboard }} </a>
             </li>
+
             <li class="{% if isContent %} active {% endif %}">
                 <a href="javascript:;" data-toggle="collapse" data-target="#nav-content" 
                 {% if isContent %} aria-expanded="true" {% endif %}>
@@ -27,10 +29,29 @@
                 </ul>
             </li>
 
-            <!-- User Profile -->
-            <li class="{% if isProfile %} active {% endif %}">
-                <a href="/admin/profile"><i class="fa fa-fw fa-user"></i> {{ lang.navProfile }} </a>
+            <li class="{% if isSiteAdmin %} active {% endif %}">
+                <a href="javascript:;" data-toggle="collapse" data-target="#nav-admin" 
+                {% if isContent %} aria-expanded="true" {% endif %}>
+                    <i class="fa fa-fw fa-file"></i> 
+                        {{ lang.navAdmin }} 
+                    <i class="fa fa-fw fa-caret-down"></i>
+                </a>
+                <ul id="nav-admin" class="collapse {% if isSiteAdmin %} in {% endif %}" 
+                {% if isContent %} aria-expanded="true" {% endif %}> 
+                    <li>
+                        <a href="/admin/site">{{ lang.navSiteAdmin }}</a>
+                    </li>
+                    <li>
+                        <a href="/admin/users">{{ lang.navUserMan }}</a>
+                    </li>
+                    <li>
+                        <a href="/admin/profile">{{ lang.navProfile }} </a>
+                    </li>
+                </ul>
             </li>
+
+            <!-- User Profile -->
+
             <li>
                 <a href="/admin/logout"><i class="fa fa-fw fa-power-off"></i>{{ lang.navLogout }}</a>
             </li>

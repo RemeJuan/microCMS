@@ -1,0 +1,96 @@
+{% include 'navigation.html' %}
+<div id="page-wrapper" class="fill">
+
+    <div class="container-fluid">
+
+        <!-- Page Heading -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">
+                    {{ lang.usersMan }}
+                </h1>
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <!--  -->
+        <div class="row users-list">
+            <div class="col-lg-6">
+            <div class="header col-lg-12">
+                <div class="col-lg-6">{{ lang.headName }}</div>
+                <div class="col-lg-6">{{ lang.headEmail }}</div>
+            </div>
+                {% for u in users %}
+                  {% if loop.first %}<ul>{% endif %}
+                    <li class="col-lg-12">
+                        <div class="title col-lg-6">
+                            <a  href="" 
+                                data-fn="{{ u.firstName }}" 
+                                data-ln="{{ u.lastName }}"
+                                data-email="{{ u.email }}"
+                                onclick="populateUserForm(this); return false;">
+                                {{ u.firstName }} {{u.lastName}}
+                            </a>
+                        </div>
+                        <div class="title col-lg-6">
+                            {{ u.email }}
+                        </div>
+                    </li>
+                  {% if loop.last %}</ul>{% endif %}
+                {% endfor %}
+            </div>
+
+            <div class="col-lg-6 profile-user">
+            <form id="userDetails" name="userDetails" class="validateForm" method="" onsubmit="updateUserDetails(this); return false;">
+                <div>
+                    <label for="firstName">{{ lang.labUserNameSurname }}</label>
+                    <div class="input-group name-group">
+                        <span class="input-group-addon">
+                            <i class="fa fa-fw fa-user"></i>
+                        </span>
+                        <input id="firstName" type="text" class="form-control" name="firstName" value="{{content.firstName}}" placeholder="{{ lang.phFirstName }}" required />
+                        <input id="lastName" type="text" class="form-control" name="lastName" value="{{content.lastName}}" placeholder="{{ lang.phLastName }}" required />                                              
+                    </div>  
+                </div>                 
+
+                <div>
+                    <label for="email">{{ lang.labEmail }}</label>
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                            <i class="fa fa-fw fa-envelope-o"></i>
+                        </span>
+                        <input id="email" type="email" class="form-control" name="email" value="{{content.email}}" placeholder="{{ lang.phEmail }}" required />                                        
+                    </div>
+                </div>
+                
+                <div>
+                    <label for="password">{{ lang.labPassword }}</label>
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                            <i class="fa fa-fw fa-lock"></i>
+                        </span>
+                        <input id="login-password" type="password" class="form-control" name="password" placeholder="{{ lang.phPassword }}" onchange="form.confirmPassword.pattern = this.value;" />
+                    </div>
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                            <i class="fa fa-fw fa-lock"></i>
+                        </span>
+                        <input id="confirmPassword" type="password" class="form-control" name="confirmPassword" placeholder="{{ lang.phConPassword }}" />
+                    </div>
+                </div>  
+                <span id="message" class="pull-left"></span>
+                <div class="btn-group pull-right">
+                    <button class="btn btn-primary" type="submit">{{ lang.saveButt }}</button>
+                    <a class="btn btn-danger" href="/admin/profile">{{ lang.cancelButt }}</a>
+                </div>
+            </form>
+            </div>
+
+        </div>
+        <!-- /.row -->
+
+    </div>
+    <!-- /.container-fluid -->
+
+</div>
+<!-- /#page-wrapper -->

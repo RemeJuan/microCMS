@@ -19,14 +19,31 @@
 	================================================== */
 	@baseHeight: 20px;
 
+/*	==================================================
+	# Global
+	================================================== */
+
 #wrapper .signup {
 	margin-left: -225px;
 }
+
+/*	==================================================
+	# Navigation
+	================================================== */
+.top-profile {
+	color: white;
+	float: left;
+	height: 50px;
+	padding: 15px 15px;
+	font-size: 18px;
+	line-height: 20px;
+}
+
 /*	==================================================
 	# Login
 	================================================== */
 .login-logo {
-	color: white;
+	color: #9d9d9d;
 }
 
 .loginbox {
@@ -105,6 +122,26 @@
 			}
 		}
 		margin-bottom: @baseHeight * 0.75;
+	}
+
+}
+
+.users-list {
+	.header {
+		font-size: 18px;
+		margin-bottom: @baseHeight * 0.5;
+		padding-bottom: @baseHeight * 0.5;
+		border-bottom: 1px solid black;
+	}
+	ul {
+		padding: 0;
+		margin: 0;
+		li {
+			list-style: none;
+			padding-top: @baseHeight * 0.25;
+			padding-bottom: @baseHeight * 0.25;
+			border-bottom: 1px solid #eee
+		}	
 	}
 
 }
