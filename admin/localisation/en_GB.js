@@ -4,7 +4,7 @@ var locale = {};
 locale.saveButt = 'Save';
 locale.cancelButt = 'Cancel';
 
-/*Headings*/
+/*Headings and Labels*/
 locale.headTitle = 'Title';
 locale.headDate = 'Date';
 locale.siteName = 'microCMS';
@@ -26,6 +26,14 @@ locale.email = 'Email Address:';
 locale.password = 'Password:';
 locale.gravatar = 'Profile Pic';
 locale.picFootnote = 'Gravatar image'
+
+/*User Admin*/
+locale.usersMan = 'Manage Users';
+locale.headName = 'Users Name';
+locale.headEmail = 'Users E-mail Address'
+
+/*Site Admin*/
+locale.siteAdmin = 'Site Administration';
 
 //Messages
 /*Global notification messages*/
@@ -58,6 +66,9 @@ locale.navDashboard = 'Dashboard';
 locale.navContent = 'Content';
 locale.navConCreate = 'Create';
 locale.navConList = 'List';
+locale.navAdmin = 'Administration';
+locale.navSiteAdmin = 'Site Administration';
+locale.navUserMan = 'User Management';
 locale.navProfile = 'Profile';
 locale.navLogout = 'Logout';
 

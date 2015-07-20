@@ -30,6 +30,14 @@ exports.findUser = function(email, next) {
     });
 };
 
+exports.getAllUsers = function(users, next) {
+    User.find({
+        
+    }, function(err, users) {
+        next(err, users);
+    });
+};
+
 exports.updateUser = function(user, next) {
     User.update({email: user.email}, {
         firstName: user.firstName,

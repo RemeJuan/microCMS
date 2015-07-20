@@ -19,6 +19,7 @@ var routes = require('./admin/routes/api');
 var admin = require('./admin/routes/admin');
 var content = require('./admin/routes/content');
 var profile = require('./admin/routes/profile');
+var users = require('./admin/routes/users');
 var sendmail = require('./admin/routes/sendmail');
 
 var passportConfig = require('./admin/auth/passport-config');
@@ -65,6 +66,7 @@ app.use(passport.session());
 app.use('/admin', admin);
 app.use('/admin/content', content);
 app.use('/admin/profile', profile);
+app.use('/admin/users', users);
 app.use('/sendmail', sendmail);
 
 //Handled by angular front-end

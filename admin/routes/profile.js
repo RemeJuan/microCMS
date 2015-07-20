@@ -13,7 +13,7 @@ router.get('/', restrict, function(req, res){
       content: req.user,
       gravatar: gravatar.url(req.user.email, {s: 200}),
       lang: locale,
-      isProfile: true
+      isSiteAdmin: true
     }); 
 });
 
@@ -26,7 +26,7 @@ router.post('/', restrict, function(req, res) {
         lang: locale,
         message: locale.updateUserErr,
         messageClass: locale.classError,
-      isProfile: true
+        isSiteAdmin: true
       });
     }
 
@@ -35,7 +35,7 @@ router.post('/', restrict, function(req, res) {
       lang: locale,
       message: locale.updateUserSuc,
       messageClass: locale.classSuccess,
-      isProfile: true
+      isSiteAdmin: true
     });
   });
 });
