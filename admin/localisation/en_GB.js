@@ -39,6 +39,24 @@ locale.headEmail = 'Users E-mail Address'
 
 /*Site Admin*/
 locale.siteAdmin = 'Site Administration';
+locale.headSiteDet = 'Site Details';
+locale.headAnaDat = 'Analytics Data';
+locale.adminSiteTitle = 'Site Name:';
+locale.adminSiteEmail = 'Site Email:';
+locale.adminSiteMeta = 'Site Meta Data:';
+locale.adminSiteKey = 'Site Keywords:';
+locale.adminKeenPID = 'Keen.io Project ID:';
+locale.adminKeenRK = 'Keen.io Read Key:';
+locale.adminKeenWK = 'Keen.io Write Key:';
+
+
+locale.phSiteTitle = 'Site Name';
+locale.phSiteEmail = 'Site Email';
+locale.phSiteMeta = 'Site Meta Data';
+locale.phSiteKey = 'Site keywords';
+locale.phKeenPID = 'Keen.io Project ID';
+locale.phKeenRK = 'Keen.io Read Key';
+locale.phKeenWK = 'Keen.io Write Key';
 
 //Messages
 /*Global notification messages*/
