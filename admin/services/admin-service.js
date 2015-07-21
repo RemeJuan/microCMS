@@ -1,7 +1,7 @@
 var Admin = require('../models/admin').Admin;
 
 exports.updateAdmin = function(admin, next) {
-    Admin.findOrCreate({
+    Admin.update({}, {
         siteName: admin.siteName,
         siteEmail: admin.siteEmail,
         siteMeta: admin.siteMeta,

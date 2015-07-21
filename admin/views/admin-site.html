@@ -15,6 +15,7 @@
 
         <!-- Page Heading -->
         <form id="updateAdmin" name="updateAdmin" class="validateForm" method="post">
+        <div class="message bg-{{ messageClass }}">{{ message }}</div>
         <div class="row">
             <div class="col-lg-6">
             <h3 class="page-header">{{ lang.headAnaDat }}</h3>
@@ -95,7 +96,6 @@
             </div>
 
         </div>
-        <span id="message" class="pull-left"></span>
         <div class="btn-group pull-right">
             <button class="btn btn-primary" type="submit">{{ lang.saveButt }}</button>
             <a class="btn btn-danger" href="/admin/profile">{{ lang.cancelButt }}</a>

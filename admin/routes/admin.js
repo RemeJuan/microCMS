@@ -71,7 +71,7 @@ router.post('/site', function(req, res){
       }); 
     }
 
-    return res.render('content', {
+    return res.render('admin', {
       siteAdmin: true,
       content: req.body,
       message: locale.contentUpdateSuccess,

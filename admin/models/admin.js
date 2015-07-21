@@ -18,15 +18,6 @@ var adminSchema = new Schema({
     }
 });
 
-// adminSchema.path('slug').validate( function(value, next) {
-//     contentService.findContent(value, function(err, content) {
-//         if(err) {
-//             return next(false);
-//         }
-//         next(!content);
-//     });
-// }, locale.slugInUseError);
-
 adminSchema.plugin(findOrCreate);
 var Admin = mongoose.model('Admin', adminSchema);
 
