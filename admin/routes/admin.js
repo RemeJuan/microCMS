@@ -3,6 +3,7 @@ var router = express.Router();
 var config = require('../../config');
 var passport = require('passport');
 var userService = require('../services/user-service');
+var adminService = require('../services/admin-service');
 var restrict = require('../auth/restrict');
 var locale = require('../localisation/en_GB');
 
@@ -51,6 +52,30 @@ router.get('/site', function(req, res){
     siteAdmin: true,
     isSiteAdmin: true,
     lang: locale
+  });
+});
+
+router.post('/site', function(req, res){
+  adminService.updateSite(req.body, function(err, content) {
+    if (err) {
+      return res.render('admin', {
+        siteAdmin: true,
+        content: req.body,
+        message: locale.contentUpdateError,
+        messageClass: locale.classError,
+        lang: locale,
+        isSiteAdmin: true
+      }); 
+    }
+
+    return res.render('content', {
+      siteAdmin: true,
+      content: req.body,
+      message: locale.contentUpdateSuccess,
+      messageClass: locale.classSuccess,
+      lang: locale,
+      isSiteAdmin: true
+    }); 
   });
 });
 

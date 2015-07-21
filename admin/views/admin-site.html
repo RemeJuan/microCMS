@@ -18,32 +18,42 @@
             <div class="col-lg-6">
             <h3 class="page-header">{{ lang.headAnaDat }}</h3>
             <div>
-                <label for="email">{{ lang.adminSiteTitle }}</label>
+                <label for="siteName">{{ lang.adminSiteTitle }}</label>
                 <div class="input-group">
                     <span class="input-group-addon">
                         <i class="fa fa-fw fa-cloud"></i>
                     </span>
-                    <input id="email" type="email" class="form-control" name="email" value="{{content.email}}" placeholder="{{ lang.phSiteTitle }}" required />                                        
+                    <input id="siteName" type="text" class="form-control" name="siteName" value="{{content.siteName}}" placeholder="{{ lang.phSiteTitle }}" required />                                        
                 </div>
             </div>
 
             <div>
-                <label for="email">{{ lang.adminSiteMeta }}</label>
+                <label for="siteEmail">{{ lang.adminSiteEmail }}</label>
+                <div class="input-group">
+                    <span class="input-group-addon">
+                        <i class="fa fa-fw fa-envelope-o"></i>
+                    </span>
+                    <input id="siteEmail" type="email" class="form-control" name="siteEmail" value="{{content.siteEmail }}" placeholder="{{ lang.phSiteEmail }}" required />                                        
+                </div>
+            </div>
+
+            <div>
+                <label for="siteMeta">{{ lang.adminSiteMeta }}</label>
                 <div class="input-group">
                     <span class="input-group-addon">
                         <i class="fa fa-fw fa-database"></i>
                     </span>
-                    <input id="email" type="email" class="form-control" name="email" value="{{content.email}}" placeholder="{{ lang.phSiteMeta }}" required />                                        
+                    <input id="siteMeta" type="text" class="form-control" name="siteMeta" value="{{content.siteMeta }}" placeholder="{{ lang.phSiteMeta }}" required />                                        
                 </div>
             </div>
 
             <div>
-                <label for="email">{{ lang.adminSiteKey }}</label>
+                <label for="siteKey">{{ lang.adminSiteKey }}</label>
                 <div class="input-group">
                     <span class="input-group-addon">
                         <i class="fa fa-fw fa-key"></i>
                     </span>
-                    <input id="email" type="email" class="form-control" name="email" value="{{content.email}}" placeholder="{{ lang.phSiteKey }}" required />                                        
+                    <input id="siteKey" type="text" class="form-control" name="siteKey" value="{{content.email}}" placeholder="{{ lang.phSiteKey }}" required />                                        
                 </div>
             </div>
 
@@ -53,32 +63,32 @@
             <div class="col-lg-6">
             <h3 class="page-header">{{ lang.headAnaDat }}</h3>
                 <div>
-                    <label for="email">{{ lang.adminKeenPID }}</label>
+                    <label for="keenPID">{{ lang.adminKeenPID }}</label>
                     <div class="input-group">
                         <span class="input-group-addon">
                             <i class="fa fa-fw fa-check-circle"></i>
                         </span>
-                        <input id="email" type="email" class="form-control" name="email" value="{{content.email}}" placeholder="{{ lang.phKeenPID }}" required />                                        
+                        <input id="keenPID" type="text" class="form-control" name="keenPID" value="{{content.keenPID }}" placeholder="{{ lang.phKeenPID }}" required />                                        
                     </div>
                 </div>
 
                 <div>
-                    <label for="email">{{ lang.adminKeenRK }}</label>
+                    <label for="keenRK">{{ lang.adminKeenRK }}</label>
                     <div class="input-group">
                         <span class="input-group-addon">
                             <i class="fa fa-fw fa-check-circle"></i>
                         </span>
-                        <input id="email" type="email" class="form-control" name="email" value="{{content.email}}" placeholder="{{ lang.phKeenRK }}" required />                                        
+                        <input id="keenRK" type="text" class="form-control" name="keenRK" value="{{content.keenRK }}" placeholder="{{ lang.phKeenRK }}" required />                                        
                     </div>
                 </div>
 
                 <div>
-                    <label for="email">{{ lang.adminKeenRK }}</label>
+                    <label for="keenWK">{{ lang.adminKeenWK }}</label>
                     <div class="input-group">
                         <span class="input-group-addon">
                             <i class="fa fa-fw fa-check-circle"></i>
                         </span>
-                        <input id="email" type="email" class="form-control" name="email" value="{{content.email}}" placeholder="{{ lang.phKeenRK }}" required />                                        
+                        <input id="keenWK" type="text" class="form-control" name="keenWK" value="{{content.keenWK }}" placeholder="{{ lang.phKeenWK }}" required />                                        
                     </div>
                 </div>
             </div>

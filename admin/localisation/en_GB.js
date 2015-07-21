@@ -42,6 +42,7 @@ locale.siteAdmin = 'Site Administration';
 locale.headSiteDet = 'Site Details';
 locale.headAnaDat = 'Analytics Data';
 locale.adminSiteTitle = 'Site Name:';
+locale.adminSiteEmail = 'Site Email:';
 locale.adminSiteMeta = 'Site Meta Data:';
 locale.adminSiteKey = 'Site Keywords:';
 locale.adminKeenPID = 'Keen.io Project ID:';
@@ -50,6 +51,7 @@ locale.adminKeenWK = 'Keen.io Write Key:';
 
 
 locale.phSiteTitle = 'Site Name';
+locale.phSiteEmail = 'Site Email';
 locale.phSiteMeta = 'Site Meta Data';
 locale.phSiteKey = 'Site keyworkds';
 locale.phKeenPID = 'Keen.io Project ID';
