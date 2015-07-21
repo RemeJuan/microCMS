@@ -1,5 +1,5 @@
 {% include 'navigation.html' %}
-<div id="page-wrapper" class="fill">
+<div id="page-wrapper" class="fill site-admin">
 
     <div class="container-fluid">
 
@@ -16,23 +16,71 @@
         <!-- Page Heading -->
         <div class="row">
             <div class="col-lg-6">
-                Site Info
+            <h3 class="page-header">{{ lang.headAnaDat }}</h3>
+            <div>
+                <label for="email">{{ lang.adminSiteTitle }}</label>
+                <div class="input-group">
+                    <span class="input-group-addon">
+                        <i class="fa fa-fw fa-cloud"></i>
+                    </span>
+                    <input id="email" type="email" class="form-control" name="email" value="{{content.email}}" placeholder="{{ lang.phSiteTitle }}" required />                                        
+                </div>
+            </div>
+
+            <div>
+                <label for="email">{{ lang.adminSiteMeta }}</label>
+                <div class="input-group">
+                    <span class="input-group-addon">
+                        <i class="fa fa-fw fa-database"></i>
+                    </span>
+                    <input id="email" type="email" class="form-control" name="email" value="{{content.email}}" placeholder="{{ lang.phSiteMeta }}" required />                                        
+                </div>
+            </div>
+
+            <div>
+                <label for="email">{{ lang.adminSiteKey }}</label>
+                <div class="input-group">
+                    <span class="input-group-addon">
+                        <i class="fa fa-fw fa-key"></i>
+                    </span>
+                    <input id="email" type="email" class="form-control" name="email" value="{{content.email}}" placeholder="{{ lang.phSiteKey }}" required />                                        
+                </div>
+            </div>
+
+
             </div>
 
             <div class="col-lg-6">
-                Users List
-            </div>
-        </div>
-        <!-- /.row -->
+            <h3 class="page-header">{{ lang.headAnaDat }}</h3>
+                <div>
+                    <label for="email">{{ lang.adminKeenPID }}</label>
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                            <i class="fa fa-fw fa-check-circle"></i>
+                        </span>
+                        <input id="email" type="email" class="form-control" name="email" value="{{content.email}}" placeholder="{{ lang.phKeenPID }}" required />                                        
+                    </div>
+                </div>
 
-        <!-- Page Heading -->
-        <div class="row">
-            <div class="col-lg-6">
-                
-            </div>
-            
-            <div class="col-lg-6">
+                <div>
+                    <label for="email">{{ lang.adminKeenRK }}</label>
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                            <i class="fa fa-fw fa-check-circle"></i>
+                        </span>
+                        <input id="email" type="email" class="form-control" name="email" value="{{content.email}}" placeholder="{{ lang.phKeenRK }}" required />                                        
+                    </div>
+                </div>
 
+                <div>
+                    <label for="email">{{ lang.adminKeenRK }}</label>
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                            <i class="fa fa-fw fa-check-circle"></i>
+                        </span>
+                        <input id="email" type="email" class="form-control" name="email" value="{{content.email}}" placeholder="{{ lang.phKeenRK }}" required />                                        
+                    </div>
+                </div>
             </div>
         </div>
         <!-- /.row -->
