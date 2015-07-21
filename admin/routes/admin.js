@@ -48,15 +48,18 @@ router.post('/login', function(req, res, next) {
 
 // Site admin
 router.get('/site', function(req, res){
-  res.render('admin', {
-    siteAdmin: true,
-    isSiteAdmin: true,
-    lang: locale
+  adminService.getAdminData(req.body, function(err, content) {
+    return res.render('admin', {
+      siteAdmin: true,
+      content: content[0],
+      lang: locale,
+      isSiteAdmin: true
+    }); 
   });
 });
 
 router.post('/site', function(req, res){
-  adminService.updateSite(req.body, function(err, content) {
+  adminService.updateAdmin(req.body, function(err, content) {
     if (err) {
       return res.render('admin', {
         siteAdmin: true,

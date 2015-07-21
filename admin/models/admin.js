@@ -2,17 +2,16 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 var adminService = require('../services/admin-service');
 var locale = require('../localisation/en_GB');
+var findOrCreate = require('mongoose-findorcreate');
 
 var adminSchema = new Schema({
-    title: {type: String, required: locale.conTitVal},
-    slug: {type: String, required: locale.conSlugVal},
-    body:  {type: String, required: locale.conBodyVal},
-    meta: {type: String},
-    keywords: {type: String},
-    created: {
-        type: Date, 
-        default: Date.now
-    },
+    siteName: {type: String},
+    siteEmail: {type: String},
+    siteMeta: {type: String},
+    siteKeyWords: {type: String},
+    keenPID: {type: String},
+    keenRK: {type: String},
+    keenWK: {type: String},
     lastmodified: {
         type: Date, 
         default: Date.now
@@ -28,6 +27,7 @@ var adminSchema = new Schema({
 //     });
 // }, locale.slugInUseError);
 
+adminSchema.plugin(findOrCreate);
 var Admin = mongoose.model('Admin', adminSchema);
 
 module.exports = {
