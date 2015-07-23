@@ -35,7 +35,7 @@ locale.phConPassword = 'Confirmation';
 /*User Admin*/
 locale.usersMan = 'Manage Users';
 locale.headName = 'Users Name';
-locale.headEmail = 'Users E-mail Address'
+locale.headEmail = 'Users E-mail Address';
 
 /*Site Admin*/
 locale.siteAdmin = 'Site Administration';

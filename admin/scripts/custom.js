@@ -36,11 +36,14 @@ function deleteUser(e) {
 		userEmail = $(data).data('email');
 
 	var con = confirm('Are you sure you wish to delete this user');
+
 	if (con) {
 		$.ajax({
 			type: 'POST',
 			url: '/admin/users/delete',
-			data: {email: userEmail},
+			data: {
+				email: userEmail
+			},
 			cache: false,
 			success: function(response) {
 				if (response == 'Success') {
