@@ -19,7 +19,7 @@ router.get('/', function(req, res){
       lang: locale,
       isDashboard: true
     }); 
-  };
+  }
 
   res.redirect('/admin/login');
 
