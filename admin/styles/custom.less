@@ -150,7 +150,8 @@
 			list-style: none;
 			padding-top: @baseHeight * 0.25;
 			padding-bottom: @baseHeight * 0.25;
-			border-bottom: 1px solid #eee
+			border-bottom: 1px solid #eee;
+			padding-left:0;
 		}	
 	}
 
@@ -173,4 +174,14 @@
 		margin-bottom: @baseHeight * 0.75;
 	}
 
+}
+
+.user-admin {
+	h4 {
+		margin-top: @baseHeight;
+		margin-left: 0;
+		&:first-of-type {
+			margin-left:-15px
+		}
+	}
 }

@@ -191,7 +191,8 @@ div[data-role="editor-toolbar"] {
   list-style: none;
   padding-top: 5px;
   padding-bottom: 5px;
-  border-bottom: 1px solid #eeeeee;
+  border-bottom: 1px solid #eee;
+  padding-left: 0;
 }
 /*	==================================================
 	# Administration
@@ -204,4 +205,11 @@ div[data-role="editor-toolbar"] {
 }
 .site-admin .input-group.name-group .form-control {
   width: 50%;
+}
+.user-admin h4 {
+  margin-top: 20px;
+  margin-left: 0;
+}
+.user-admin h4:first-of-type {
+  margin-left: -15px;
 }

@@ -1,5 +1,5 @@
 {% include 'navigation.html' %}
-<div id="page-wrapper" class="fill">
+<div id="page-wrapper" class="fill user-admin">
 
 	<div class="container-fluid">
 
@@ -16,9 +16,10 @@
 		<!--  -->
 		<div class="row users-list">
 			<div class="col-lg-6">
-				<div class="header col-lg-12">
-					<div class="col-lg-5">{{ lang.headName }}</div>
-					<div class="col-lg-5">{{ lang.headEmail }}</div>
+				<div class="col-lg-12">
+					<h4 class="page-header col-lg-5">{{ lang.headName }}</h4>
+					<h4 class="page-header col-lg-5">{{ lang.headEmail }}</h4>
+					<h4 class="page-header col-lg-2">&nbsp;</h4>
 				</div>
 				{% for u in users %} {% if loop.first %}
 				<ul>{% endif %}
@@ -38,6 +39,14 @@
 			</div>
 
 			<div class="col-lg-6 profile-user">
+				<div class="col-lg-12">
+					<h4 class="page-header">
+						Create/Edit User
+					</h4>
+				</div>
+				<p class="small">
+					To create a new user, simply complete the form and click save, if the user does not exist and account will automatically be created.
+				</p>
 				<form id="userDetails" name="userDetails" class="validateForm" method="" onsubmit="updateUserDetails(this); return false;">
 					<div>
 						<label for="firstName">{{ lang.labUserNameSurname }}</label>
@@ -77,7 +86,7 @@
 					</div>
 					<div class="btn-group pull-right">
 						<button class="btn btn-primary" type="submit">{{ lang.saveButt }}</button>
-						<a class="btn btn-danger" href="/admin/profile">{{ lang.cancelButt }}</a>
+						<button class="btn btn-danger" type="reset">{{ lang.cancelButt }}</button>
 					</div>
 				</form>
 			</div>
