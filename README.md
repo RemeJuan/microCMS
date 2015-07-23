@@ -65,6 +65,9 @@ App will not launch unless you have started your mongo server
 
 ## Change Log
 
+### v0.5.0
+Password reset
+
 ### v0.4.1
 Site Administration - Default site data
 

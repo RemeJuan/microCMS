@@ -10,14 +10,14 @@ module.exports = function() {
                 return next(err);
             }
             if(!user) {
-                return next(null, null);
+                return next(null, false);
             }
             bcrypt.compare(password, user.password, function(err, same) {
                 if(err) {
                     return next(err);
                 }
                 if(!same) {
-                    return (null, null);
+                    return (null, false);
                 }
                 next(null, user);
             });
@@ -28,8 +28,8 @@ module.exports = function() {
     });
     
     passport.deserializeUser(function(email, next){
-       userService .findUser(email, function(err, user) {
+       userService.findUser(email, function(err, user) {
            next(err, user);
-       })
+       });
     });
 };
