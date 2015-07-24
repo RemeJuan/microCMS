@@ -11,8 +11,12 @@ locale.siteName = 'microCMS';
 locale.signIn = 'Sign In';
 locale.forgotPW = 'Forgot Password?';
 locale.rememberMe = 'Remember Me';
+locale.forgotPassword = 'Forgot Password';
+locale.createNewPassword = 'Create new password';
 locale.login = 'Login';
 locale.signup = 'Sign Up';
+locale.reset = 'Reset';
+locale.submit = 'Submit';
 
 //Content
 locale.contentTitle = 'Content';
