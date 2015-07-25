@@ -54,19 +54,20 @@ To launch:
 Open Command-Line/Terminal and cd to your local repo and run `node web.js`
 App will not launch unless you have started your mongo server
 
-## Current Resource
-
-## Roadmap
-* Basic config
-* Routes setup
-* Login screen design
-* Authentication
-* Dashboard setup
-
 ## Change Log
 
+### v0.5.1:
+Updated content section:
+* Cleaner 2 column layout
+* Details section with etra info about the article when available
+* Field validations
+* Hover tooltips for each field/label.
+
 ### v0.5.0
-Password reset
+Password reset:
+* New forgotten password screen
+* Auto generated tokens/URL for password reset
+* Mailchimp setup for handeling reset emails
 
 ### v0.4.1
 Site Administration - Default site data
