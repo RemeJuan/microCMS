@@ -33,9 +33,7 @@ router.get('/login', function(req, res) {
 
 router.post('/login', function(req, res, next) {
 	passport.authenticate('local', function(err, user, info) {
-		console.log('here');
 		if (err) {
-			console.log(err);
 			return next(err);
 		}
 		if (!user) {
