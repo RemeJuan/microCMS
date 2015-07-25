@@ -1,12 +1,13 @@
 var Content = require('../models/content').Content;
 
-exports.createContent = function(content, next) {
+exports.createContent = function(content, user, next) {
     var newContent = new Content({
         title: content.title,
         slug: content.slug,
         body: content.body,
         meta: content.meta,
-        keywords: content.keywords
+        keywords: content.keywords,
+        author: user.firstName
     });
 
     newContent.save(function(err) {
@@ -17,12 +18,13 @@ exports.createContent = function(content, next) {
     });
 };
 
-exports.updateContent = function(content, next) {
+exports.updateContent = function(content, user, next) {
     Content.update({slug: content.slug}, {
         title: content.title,
         body: content.body,
         meta: content.meta,
         keywords: content.keywords,
+        modifiedBy: user.firstName,
         $inc: {__v:1}
     }, function(err, numberAffected, rawResponse, content) {
        if (err) {

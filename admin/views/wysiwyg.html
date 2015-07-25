@@ -1,4 +1,5 @@
 <div class="">
+<label data-toggle="tooltip" title="{{ lang.toolContent }}" data-placement="right">{{ lang.labContent }}</label>
   <div class="btn-toolbar" data-role="editor-toolbar" data-target="#wysiwyg-editor">
     <div class="btn-group">
       <a class="btn btn-default" data-edit="bold" title="Bold (Ctrl/Cmd+B)"><i class="fa fa-bold"></i></a>
@@ -25,9 +26,10 @@
       </div>
       <div class="btn-group">
         <a class="btn btn-default" data-edit="unlink" title="Remove Hyperlink"><i class="fa fa-unlink"></i></a>
-        <span class="btn btn-default" title="Insert picture (or just drag & drop)" id="pictureBtn"> <i class="fa fa-picture-o"></i>
-          <input type="file" data-role="magic-overlay" data-target="#pictureBtn" data-edit="insertImage" />
+        <span class="btn btn-default" title="Insert picture (or just drag & drop)" id="pictureBtn" onclick="imageUpload()"> 
+          <i class="fa fa-picture-o"></i>
         </span>
+        <input id="image-upload" class="hidden" type="file" data-role="magic-overlay" data-target="#pictureBtn" data-edit="insertImage" />
       </div>
     <div class="btn-group">
       <a class="btn btn-default" data-edit="undo" title="Undo (Ctrl/Cmd+Z)"><i class="fa fa-undo"></i></a>
@@ -35,6 +37,6 @@
     </div>
   </div>
 
-  <div id="wysiwyg-editor" class="lead form-control"></div>
+  <div id="wysiwyg-editor" class="lead form-control"data-toggle="tooltip" title="{{ lang.toolContent }}" data-placement="bottom"></div>
   <input id="contentBody" name="body" type="hidden" value="{{ content.body }}" required>
 </div>

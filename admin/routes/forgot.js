@@ -39,7 +39,6 @@ router.post('/', function(req, res, next) {
 				user.resetPasswordExpires = Date.now() + 3600000; // 1 hour
 
 				user.save(function(err) {
-					console.log(err, token, user);
 					done(err, token, user);
 				});
 			});
@@ -64,7 +63,6 @@ router.post('/', function(req, res, next) {
 				}
 			}, function(err, res) {
 				if (err) {
-					console.log(JSON.stringify(err));
 					return res.render('forgot', {
 						lang: locale,
 						message: 'There was an error sending your mail'

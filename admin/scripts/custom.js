@@ -1,3 +1,12 @@
+$(document).ready(function(){
+    $('[data-toggle="tooltip"]').tooltip(); 
+});
+
+
+function imageUpload() {
+	$('#image-upload').trigger('click');
+};
+
 function populateUserForm(userDetails) {
 	userDetails = $(userDetails).parent();
 	var fn = $(userDetails).data('fn'),

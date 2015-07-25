@@ -21,7 +21,6 @@ router.get('/:token', function(req, res) {
 			$gt: Date.now()
 		}
 	}, function(err, user) {
-		console.log(user);
 		if (!user) {
 			return res.render('forgot', {
 				lang: locale,
