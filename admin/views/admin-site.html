@@ -1,110 +1,76 @@
 {% include 'navigation.html' %}
 <div id="page-wrapper" class="fill site-admin">
 
-    <div class="container-fluid">
+	<div class="container-fluid">
 
-        <!-- Page Heading -->
-        <div class="row">
-            <div class="col-lg-12">
-                <h1 class="page-header">
+		<!-- Page Heading -->
+		<div class="row">
+			<div class="col-lg-12">
+				<h1 class="page-header">
                     {{ lang.siteAdmin }}
                 </h1>
-            </div>
-        </div>
-        <!-- /.row -->
+			</div>
+		</div>
+		<!-- /.row -->
 
-        <!-- Page Heading -->
-        <form id="updateAdmin" name="updateAdmin" class="validateForm" method="post">
-        <div class="message bg-{{ messageClass }}">{{ message }}</div>
-        <div class="row">
-            <div class="col-lg-6">
-            <h3 class="page-header">{{ lang.headAnaDat }}</h3>
-            <div>
-                <label for="siteName">{{ lang.adminSiteTitle }}</label>
-                <div class="input-group">
-                    <span class="input-group-addon">
-                        <i class="fa fa-fw fa-cloud"></i>
-                    </span>
-                    <input id="siteName" type="text" class="form-control" name="siteName" value="{{content.siteName}}" placeholder="{{ lang.phSiteTitle }}" required />                                        
-                </div>
-            </div>
+		<form id="updateAdmin" name="updateAdmin" class="validateForm" method="post">
+			<div class="row">
+				<div class="col-lg-6">
+					<h3 class="page-header">{{ lang.headSiteDet }}</h3>
+					<div>
+						<label for="siteName">{{ lang.adminSiteTitle }}</label>
+						<div class="input-group">
+							<span class="input-group-addon">
+                                <i class="fa fa-fw fa-cloud"></i>
+                            </span>
+							<input id="siteName" type="text" class="form-control" name="siteName" value="{{content.siteName}}" placeholder="{{ lang.phSiteTitle }}" required />
+						</div>
+					</div>
 
-            <div>
-                <label for="siteEmail">{{ lang.adminSiteEmail }}</label>
-                <div class="input-group">
-                    <span class="input-group-addon">
-                        <i class="fa fa-fw fa-envelope-o"></i>
-                    </span>
-                    <input id="siteEmail" type="email" class="form-control" name="siteEmail" value="{{content.siteEmail }}" placeholder="{{ lang.phSiteEmail }}" required />                                        
-                </div>
-            </div>
+					<div>
+						<label for="siteEmail">{{ lang.adminSiteEmail }}</label>
+						<div class="input-group">
+							<span class="input-group-addon">
+                                <i class="fa fa-fw fa-envelope-o"></i>
+                            </span>
+							<input id="siteEmail" type="email" class="form-control" name="siteEmail" value="{{content.siteEmail }}" placeholder="{{ lang.phSiteEmail }}" required />
+						</div>
+					</div>
 
-            <div>
-                <label for="siteMeta">{{ lang.adminSiteMeta }}</label>
-                <div class="input-group">
-                    <span class="input-group-addon">
-                        <i class="fa fa-fw fa-database"></i>
-                    </span>
-                    <input id="siteMeta" type="text" class="form-control" name="siteMeta" value="{{content.siteMeta }}" placeholder="{{ lang.phSiteMeta }}" required />                                        
-                </div>
-            </div>
+					<div>
+						<label for="siteMeta">{{ lang.adminSiteMeta }}</label>
+						<div class="input-group">
+							<span class="input-group-addon">
+                                <i class="fa fa-fw fa-database"></i>
+                            </span>
+							<input id="siteMeta" type="text" class="form-control" name="siteMeta" value="{{content.siteMeta }}" placeholder="{{ lang.phSiteMeta }}" required />
+						</div>
+					</div>
 
-            <div>
-                <label for="siteKey">{{ lang.adminSiteKey }}</label>
-                <div class="input-group">
-                    <span class="input-group-addon">
-                        <i class="fa fa-fw fa-key"></i>
-                    </span>
-                    <input id="siteKeyWords" type="text" class="form-control" name="siteKeyWords" value="{{content.siteKeyWords}}" placeholder="{{ lang.phSiteKey }}" required />                                        
-                </div>
-            </div>
+					<div>
+						<label for="siteKey">{{ lang.adminSiteKey }}</label>
+						<div class="input-group">
+							<span class="input-group-addon">
+                                <i class="fa fa-fw fa-key"></i>
+                            </span>
+							<input id="siteKeyWords" type="text" class="form-control" name="siteKeyWords" value="{{content.siteKeyWords}}" placeholder="{{ lang.phSiteKey }}" required />
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-6">
+			</div>
 
+			<!-- /.row -->
+			<div class="row">
+				<div class="btn-group pull-right">
+					<button class="btn btn-primary" type="submit">{{ lang.saveButt }}</button>
+					<a class="btn btn-danger" href="/admin/profile">{{ lang.cancelButt }}</a>
+				</div>
+			</div>
+		</form>
+		<!-- /.container-fluid -->
 
-            </div>
-
-            <div class="col-lg-6">
-            <h3 class="page-header">{{ lang.headAnaDat }}</h3>
-                <div>
-                    <label for="keenPID">{{ lang.adminKeenPID }}</label>
-                    <div class="input-group">
-                        <span class="input-group-addon">
-                            <i class="fa fa-fw fa-check-circle"></i>
-                        </span>
-                        <input id="keenPID" type="text" class="form-control" name="keenPID" value="{{content.keenPID }}" placeholder="{{ lang.phKeenPID }}" required />                                        
-                    </div>
-                </div>
-
-                <div>
-                    <label for="keenRK">{{ lang.adminKeenRK }}</label>
-                    <div class="input-group">
-                        <span class="input-group-addon">
-                            <i class="fa fa-fw fa-check-circle"></i>
-                        </span>
-                        <input id="keenRK" type="text" class="form-control" name="keenRK" value="{{content.keenRK }}" placeholder="{{ lang.phKeenRK }}" required />                                        
-                    </div>
-                </div>
-
-                <div>
-                    <label for="keenWK">{{ lang.adminKeenWK }}</label>
-                    <div class="input-group">
-                        <span class="input-group-addon">
-                            <i class="fa fa-fw fa-check-circle"></i>
-                        </span>
-                        <input id="keenWK" type="text" class="form-control" name="keenWK" value="{{content.keenWK }}" placeholder="{{ lang.phKeenWK }}" required />                                        
-                    </div>
-                </div>
-            </div>
-
-        </div>
-        <div class="btn-group pull-right">
-            <button class="btn btn-primary" type="submit">{{ lang.saveButt }}</button>
-            <a class="btn btn-danger" href="/admin/profile">{{ lang.cancelButt }}</a>
-        </div>
-        </form>
-        <!-- /.row -->
-
-    </div>
-    <!-- /.container-fluid -->
-
+	</div>
 </div>
 <!-- /#page-wrapper -->

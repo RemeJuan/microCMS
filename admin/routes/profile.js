@@ -18,7 +18,7 @@ router.get('/', restrict, function(req, res){
 });
 
 router.post('/', restrict, function(req, res) {
-  userService.updateUser(req.body, function(err, user) {
+  userService.addUpdateUser(req.body, function(err, user) {
     if (err) {
       return res.render('profile', {
         content: req.body,

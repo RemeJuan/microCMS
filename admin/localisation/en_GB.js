@@ -11,8 +11,12 @@ locale.siteName = 'microCMS';
 locale.signIn = 'Sign In';
 locale.forgotPW = 'Forgot Password?';
 locale.rememberMe = 'Remember Me';
+locale.forgotPassword = 'Forgot Password';
+locale.createNewPassword = 'Create new password';
 locale.login = 'Login';
 locale.signup = 'Sign Up';
+locale.reset = 'Reset';
+locale.submit = 'Submit';
 
 //Content
 locale.contentTitle = 'Content';
@@ -35,28 +39,22 @@ locale.phConPassword = 'Confirmation';
 /*User Admin*/
 locale.usersMan = 'Manage Users';
 locale.headName = 'Users Name';
-locale.headEmail = 'Users E-mail Address'
+locale.headEmail = 'Users E-mail Address';
+locale.headCreateEdit = 'Create/Edit User';
+locale.descCreateEdit = 'To create a new user, simply complete the form and click save, if the user does not exist and account will automatically be created.';
 
 /*Site Admin*/
 locale.siteAdmin = 'Site Administration';
 locale.headSiteDet = 'Site Details';
-locale.headAnaDat = 'Analytics Data';
 locale.adminSiteTitle = 'Site Name:';
 locale.adminSiteEmail = 'Site Email:';
 locale.adminSiteMeta = 'Site Meta Data:';
 locale.adminSiteKey = 'Site Keywords:';
-locale.adminKeenPID = 'Keen.io Project ID:';
-locale.adminKeenRK = 'Keen.io Read Key:';
-locale.adminKeenWK = 'Keen.io Write Key:';
-
 
 locale.phSiteTitle = 'Site Name';
 locale.phSiteEmail = 'Site Email';
 locale.phSiteMeta = 'Site Meta Data';
 locale.phSiteKey = 'Site keywords';
-locale.phKeenPID = 'Keen.io Project ID';
-locale.phKeenRK = 'Keen.io Read Key';
-locale.phKeenWK = 'Keen.io Write Key';
 
 //Messages
 /*Global notification messages*/
@@ -64,7 +62,7 @@ locale.classError = 'danger';
 locale.classSuccess = 'success';
 
 /*Content notification messages*/
-locale.contentUpdateSuccess = 'Content updated successfully'
+locale.contentUpdateSuccess = 'Content updated successfully';
 locale.contentUpdateError = 'Error updating content';
 locale.slugError = 'Slug needs to be unique';
 locale.slugInUseError = 'That slug is already in use';

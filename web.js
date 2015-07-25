@@ -20,6 +20,8 @@ var admin = require('./admin/routes/admin');
 var content = require('./admin/routes/content');
 var profile = require('./admin/routes/profile');
 var users = require('./admin/routes/users');
+var forgot = require('./admin/routes/forgot');
+var reset = require('./admin/routes/reset');
 var sendmail = require('./admin/routes/sendmail');
 
 var passportConfig = require('./admin/auth/passport-config');
@@ -67,6 +69,8 @@ app.use('/admin', admin);
 app.use('/admin/content', content);
 app.use('/admin/profile', profile);
 app.use('/admin/users', users);
+app.use('/admin/forgot', forgot);
+app.use('/admin/reset', reset);
 app.use('/sendmail', sendmail);
 
 //Handled by angular front-end
