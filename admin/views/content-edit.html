@@ -16,24 +16,37 @@
         <!-- Content Editor -->
         <div class="row">
         <div class="message bg-{{ messageClass }}">{{ message }}</div>
-            <div class="col-lg-12">
-                <form id="contentCreate" name="contentCreate" method="post">
-                <input id="contentTitle" name="title" type="text" class="form-control input-lg form-group" value="{{ content.title }}" placeholder="Content Title" required />
+        <form id="contentCreate" name="contentCreate" method="post">
+            <div class="col-lg-8">
+                    <label for="contentTitle" data-toggle="tooltip" title="{{ lang.toolTitle }}" data-placement="right">{{ lang.labTitle }}</label>
+                    <input id="contentTitle" name="title" type="text" class="form-control input-lg form-group" value="{{ content.title }}" placeholder="Content Title" data-toggle="tooltip" title="{{ lang.toolTitle }}" data-placement="bottom" required />
 
-                <input id="contentSlug" name="slug" type="text" class="form-control input-lg form-group" value="{{ content.slug }}" placeholder="Content Slug" required />
+                    <label for="contentSlug" data-toggle="tooltip" title="{{ lang.toolSlug }}" data-placement="right">{{ lang.labSlug }}</label>
+                    <input id="contentSlug" name="slug" type="text" class="form-control input-lg form-group" value="{{ content.slug }}" placeholder="Content Slug" data-toggle="tooltip" title="{{ lang.toolSlug }}" data-placement="bottom" pattern="^[a-z]{4,}$" required />
 
-                    {% include 'wysiwyg.html' %}
+                        {% include 'wysiwyg.html' %}
+            </div>
+            <div class="col-lg-4">
+                <label for="contentTitle" data-toggle="tooltip" title="{{ lang.toolMeta }}" data-placement="right">{{ lang.labMeta }}</label>
+                <input id="contentMeta" name="meta" type="text" class="form-control input-lg form-group " value="{{ content.meta }}" placeholder="Meta Data" data-toggle="tooltip" title="{{ lang.toolMeta }}" data-placement="bottom" />
 
-                <input id="contentMeta" name="meta" type="text" class="form-control input-lg form-group " value="{{ content.meta }}" placeholder="Meta Data" />
+                <label for="contentTitle" data-toggle="tooltip" title="{{ lang.toolKeyWords }}" data-placement="right">{{ lang.labKeyWords }}</label>
+                <input id="contentKeywords" name="keywords" type="text" class="form-control input-lg form-group" value="{{ content.keywords }}" placeholder="Keywords" data-toggle="tooltip" title="{{ lang.toolKeyWords }}" data-placement="bottom" />
 
-                <input id="contentKeywords" name="keywords" type="text" class="form-control input-lg form-group" value="{{ content.keywords }}" placeholder="Keywords" />
-
+                <div>
+                    <label>Details:</label>
+                    <p>Author: {% if content.author %} {{ content.author }} {% endif %}</p>
+                    <p>Created: {% if content.created %} {{ content.created|date('d M Y') }} {% endif %}</p>
+                    <p>Modified By: {% if content.modifiedBy %} {{ content.modifiedBy }} {% endif %}</p>
+                    <p>Last Modified: {% if content.lastmodified %} {{ content.lastmodified|date('d M Y') }} {% endif %}</p>
+                    <p>Revision: {%if content.__v %} {{ content.__v }} {% endif %}</p>
+                </div>
                 <div class="btn-group pull-right">
                     <button class="btn btn-primary" type="submit">{{ lang.saveButt }}</button>
                     <a class="btn btn-danger" href="/admin/content">{{ lang.cancelButt }}</a>
                 </div>
-                </form>
             </div>
+            </form>
         </div>
         <!-- /.row -->
 

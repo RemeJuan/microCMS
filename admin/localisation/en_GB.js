@@ -22,6 +22,22 @@ locale.submit = 'Submit';
 locale.contentTitle = 'Content';
 locale.editContent = 'Edit Content';
 locale.createContent = 'Create Content';
+locale.labTitle = 'Title:';
+locale.labSlug = 'URL Path:';
+locale.labContent = 'Content:';
+locale.labMeta = 'Meta Tags:';
+locale.labKeyWords = 'Keywords:';
+locale.toolTitle = 'The title for the Article or Post';
+locale.toolSlug = 'The URL display path: http://sitename.ext/urlpath';
+locale.toolContent = 'The main content of the article or post';
+locale.toolMeta = 'Single sentence to descript eh article';
+locale.toolKeyWords = 'A few comma seperated keywords, up to 20';
+locale.labDetails = 'Details';
+locale.detAuthor = 'Author:';
+locale.detCreated = 'Created:';
+locale.detModBy = 'Modified By:';
+locale.lastMod = 'Last Modified:';
+locale.revision = 'Revision:';
 
 // Profile
 locale.profileUserTitle = 'Profile';

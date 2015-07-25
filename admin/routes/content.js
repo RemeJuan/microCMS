@@ -32,7 +32,7 @@ router.get('/edit/:slug', restrict, function(req, res){
 });
 
 router.post('/edit/:slug', restrict, function(req, res){
-  contentService.updateContent(req.body, function(err, content) {
+  contentService.updateContent(req.body, req.user, function(err, content) {
     if (err) {
       return res.render('content', {
         title: locale.editContent,
@@ -68,7 +68,7 @@ router.get('/create', restrict, function(req, res){
 });
 
 router.post('/create', function(req, res, next) {
-  contentService.createContent(req.body, function(err) {
+  contentService.createContent(req.body, req.user, function(err) {
     if (err) {
       var vm = {
         title: locale.createContent,

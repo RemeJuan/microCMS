@@ -9,6 +9,8 @@ var contentSchema = new Schema({
     body:  {type: String, required: locale.conBodyVal},
     meta: {type: String},
     keywords: {type: String},
+    author: {type: String},
+    modifiedBy: {type: String},
     created: {
         type: Date, 
         default: Date.now
