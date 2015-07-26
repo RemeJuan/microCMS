@@ -56,6 +56,9 @@ App will not launch unless you have started your mongo server
 
 ## Change Log
 
+### v0.6.0
+Display analytics on main dashboard
+
 ### v0.5.1:
 Updated content section:
 * Cleaner 2 column layout
